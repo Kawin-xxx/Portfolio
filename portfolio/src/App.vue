@@ -5,6 +5,7 @@
   import ProjectsSection from './components/ProjectsSection.vue'
   import ContactsSection from './components/ContactsSection.vue'
   import MainFooter from './components/MainFooter.vue'
+  import ExperienceSection from './components/ExperienceSection.vue'
 
   export default {
     components: {
@@ -14,6 +15,7 @@
       ProjectsSection,
       ContactsSection,
       MainFooter,
+      ExperienceSection
     }
   }
 </script>
@@ -24,6 +26,7 @@
 
     <main>
       <AboutSection />
+      <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
       <ContactsSection />
@@ -34,8 +37,4 @@
 </template>
 
 <style scoped>
-/* .page {
-  display: flex;
-  flex-direction: column;
-} */
 </style>
