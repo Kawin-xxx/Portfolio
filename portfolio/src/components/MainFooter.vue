@@ -5,11 +5,11 @@ export default {
 </script>
 
 <template>
-    <section class="footer">
+    <footer class="footer">
         <div class="footer__container container">
             <p class="footer__description">Разработано Екатериной Олейниковой в 2024 году</p>
         </div>
-    </section>
+    </footer>
 </template>
 
 <style scoped>
