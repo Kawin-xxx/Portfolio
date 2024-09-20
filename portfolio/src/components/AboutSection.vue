@@ -1,6 +1,11 @@
 <script>
+import SocialLinks from './SocialLinks.vue';
+
 
 export default {
+    components: {
+        SocialLinks
+    }
 }
 </script>
 
@@ -15,20 +20,7 @@ export default {
                     математика и информатика и 3 года коммерческого опыта
                 </p>
 
-                <ul class="about__social social">
-                    <li class="social__item">
-                        <a class="social__link" href="">Гит</a>
-                    </li>
-                    <li class="social__item">
-                        <a class="social__link" href="">Тг</a>
-                    </li>
-                    <li class="social__item">
-                        <a class="social__link" href="">Иг</a>
-                    </li>
-                    <li class="social__item">
-                        <a class="social__link" href="">Вк</a>
-                    </li>
-                </ul>
+                <SocialLinks class="about__social" />
 
                 <a href="" class="about__button">Скачать резюме</a>
             </div>

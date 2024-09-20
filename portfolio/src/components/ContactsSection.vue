@@ -1,6 +1,11 @@
 <script>
+import SocialLinks from './SocialLinks.vue';
+
 
 export default {
+    components: {
+        SocialLinks
+    }
 }
 </script>
 
@@ -11,20 +16,8 @@ export default {
             <p class="contsacts__description">Описание</p>
         </div>
 
-        <ul class="contacts__social social">
-            <li class="social__item">
-                <a class="social__link" href="">Гит</a>
-            </li>
-            <li class="social__item">
-                <a class="social__link" href="">Тг</a>
-            </li>
-            <li class="social__item">
-                <a class="social__link" href="">Иг</a>
-            </li>
-            <li class="social__item">
-                <a class="social__link" href="">Вк</a>
-            </li>
-        </ul>
+
+        <SocialLinks class="contacts__social" />
 
         <div class="contacts__form form">
             <form action="">

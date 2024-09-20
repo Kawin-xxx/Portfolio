@@ -5,3 +5,10 @@ export const MENU_ITEMS = [
     { name: 'Проекты', href: 'projects' },
     { name: 'Контакты', href: 'contacts' },
 ]
+
+export const SOCIAL_LINKS = [
+    { name: 'git', link: '', icon: ''},
+    { name: 'tg', link: '', icon: ''},
+    { name: 'ig', link: '', icon: ''},
+    { name: 'vk', link: '', icon: ''}
+]
