@@ -24,7 +24,7 @@
   <div class="page">
     <MainHeader />
 
-    <main>
+    <main class="main-container">
       <AboutSection />
       <ExperienceSection />
       <SkillsSection />
@@ -36,5 +36,16 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.main-container {
+  height: 100%;
+  flex-shrink: 1;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  grid-template-columns: 100%;
+}
 </style>
