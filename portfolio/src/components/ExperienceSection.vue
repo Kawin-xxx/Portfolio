@@ -1,6 +1,16 @@
 <script>
+import { EXPERIENS_ITEMS } from '@/constants.js'
+import ExperienceCard from '@/components/ExperienceCard.vue'
 
 export default {
+    components: {
+        ExperienceCard 
+    },
+    data() {
+        return {
+            experienceItems: EXPERIENS_ITEMS
+        }
+    }
 }
 </script>
 
@@ -9,14 +19,15 @@ export default {
         <div class="experience__container container">
             <h2 class="experience__title">Мой опыт</h2>
             <ul class="experience__list">
-                <li class="experience__item">Школа</li>
-                <li class="experience__item">Университет</li>
-                <li class="experience__item">Диплом</li>
-                <li class="experience__item">23 devs</li>
+                <ExperienceCard
+                    v-for="(item, index) in experienceItems"
+                    :key="index"
+                    :cardData="item"
+                />
             </ul>
         </div>
     </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 </style>

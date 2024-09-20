@@ -12,3 +12,10 @@ export const SOCIAL_LINKS = [
     { name: 'ig', link: '', icon: ''},
     { name: 'vk', link: '', icon: ''}
 ]
+
+export const EXPERIENS_ITEMS = [
+    { name: 'Школа', description: 'Описание', yearStart: 2000, yearEnd: 2024 },
+    { name: 'Университет', description: 'Описание', yearStart: 2000, yearEnd: 2024 },
+    { name: 'Диплом', description: 'Описание', yearStart: 2000, yearEnd: 2024 },
+    { name: '23 devs', description: 'Описание', yearStart: 2000, yearEnd: 2024 }
+]
