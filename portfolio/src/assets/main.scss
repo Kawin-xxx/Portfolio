@@ -1,4 +1,4 @@
-@import './base.css';
+@import './base.scss';
 
 #app {
   /* max-width: 1280px;
@@ -7,6 +7,17 @@
   /* padding: 2rem; */
   font-weight: normal;
 }
+
+html {
+  scroll-behavior: smooth
+}
+
+// #app {
+//   display: grid;
+//   grid-template-rows: auto 1fr auto;
+//   min-height: 100vh;
+//   grid-template-columns: 100%;
+// }
 
 * {
   margin: 0;
@@ -37,12 +48,6 @@ a,
   width: 100%;
   margin: 0 auto;
   max-width: 1400px;
-}
-
-#app {
-  height: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
 @media (hover: hover) {

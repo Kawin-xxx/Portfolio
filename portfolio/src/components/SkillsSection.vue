@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <section class="skills">
+    <section class="skills" id="skills">
         <div class="skills__container container">
             <h2 class="skills__title">Мои навыки</h2>
             <ul class="skills__list">

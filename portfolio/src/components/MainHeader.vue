@@ -1,14 +1,19 @@
 <script>
-
+import { MENU_ITEMS } from '@/constants.js'
 export default {
     data() {
         return {
-            isMenuOpen: false
+            isMenuOpen: false,
+            menuItems: MENU_ITEMS,
+            activeSection: ''
         }
     },
     methods: {
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
+        },
+        scrollToSection(sectionName) {
+            this.activeSection = sectionName;
         }
     },
 }
@@ -38,17 +43,19 @@ export default {
 
                 <transition name="fade">
                     <ul class="navigation__list site-list" v-if="isMenuOpen">
-                        <li class="site-list__item">
-                            <a href="" class="site-list__link">Home</a>
-                        </li>
-                        <li class="site-list__item">
-                            <a href="" class="site-list__link">Education</a>
-                        </li>
-                        <li class="site-list__item">
-                            <a href="" class="site-list__link">Services</a>
-                        </li>
-                        <li class="site-list__item">
-                            <a href="" class="site-list__link">Contact</a>
+                        <li
+                            v-for="(item, index) in menuItems"
+                            :key="index"
+                            class="site-list__item"
+                        >
+                            <a
+                                :href="'#'+ item.href"
+                                @click="scrollToSection(item.href)"
+                                class="site-list__link"
+                                :class="{ 'site-list__link--active': activeSection === item.href }"
+                            >
+                                {{ item.name }}
+                            </a>
                         </li>
                     </ul>
                 </transition>
@@ -58,16 +65,51 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.header {
+    min-height: 60px;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+}
+
 .header__container {
+    padding-left: 20px;
     display: flex;
     justify-content: space-between;
 }
 
+.navigation {
+    height: 60px;
+}
+
+.navigation__list {
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    width: 50%;
+    z-index: 2;
+    top: 60px;
+    right: 0;
+    display: block;
+    padding: 10px;
+    border-left: 1px solid $color-white;
+    border-bottom: 1px solid $color-white;
+}
+
 .site-list {
     list-style: none;
-    display: flex;
-    column-gap: 30px;
-    background-color: white;
+    background-color: $color-black;
+
+    & .site-list__link {
+        height: 100%;
+        display: block;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 0;
+
+        &--active {
+            border-bottom: 1px solid $color-white;
+            color: $color-white;
+        }
+    }
 }
 
 .navigation__toggle {
@@ -87,10 +129,8 @@ export default {
     right: 22px;
     height: 1.5px;
     width: 16px;
-    background-color: white;
-    box-shadow: 0 5px 0 0 white, 0 10px 0 0 white;
-    // background-color: $color-black;
-    // box-shadow: 0 5px 0 0 $color-black, 0 10px 0 0 $color-black;
+    box-shadow: 0 5px 0 0 $color-white, 0 10px 0 0 $color-white;
+    background-color: $color-white;
   }
 }
 
@@ -103,8 +143,7 @@ export default {
     height: 1.5px;
     width: 16px;
     transform: rotate(45deg);
-    // background-color: $color-black;
-    background-color: white;
+    background-color: $color-white;
   }
 
   &::after {
@@ -115,18 +154,8 @@ export default {
     height: 1.5px;
     width: 16px;
     transform: rotate(-45deg);
-    // background-color: $color-black;
-    background-color: white;
+    background-color: $color-white;
   }
-}
-
-.navigation__list {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    z-index: 2;
-    top: 60px;
-    display: block;
 }
 
 .fade-enter-active,
@@ -137,5 +166,10 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 </style>

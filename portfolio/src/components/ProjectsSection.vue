@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <section class="projects">
+    <section class="projects" id="projects">
         <div class="projects__container container">
             <h2 class="projects__title">Мои проекты</h2>
             <ul class="projects__list">

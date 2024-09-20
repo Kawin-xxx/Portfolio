@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <section class="contacts">
+    <section class="contacts" id="contacts">
         <div class="contacts__container container">
             <h2 class="contacts__title">Контакты</h2>
             <p class="contsacts__description">Описание</p>

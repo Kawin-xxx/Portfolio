@@ -38,8 +38,8 @@
 
 <style scoped lang="scss">
 .main-container {
-  height: 100%;
   flex-shrink: 1;
+  margin-top: 60px;
 }
 
 .page {

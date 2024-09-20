@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <section class="about">
+    <section class="about" id="about">
         <div class="about__container container">
             <div class="about__description">
                 <h1 class="about__title">Привет, меня зовут Екатерина Олейникова</h1>
