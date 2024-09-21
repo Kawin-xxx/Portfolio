@@ -19,3 +19,10 @@ export const EXPERIENS_ITEMS = [
     { name: 'Диплом', description: 'Описание', yearStart: 2000, yearEnd: 2024 },
     { name: '23 devs', description: 'Описание', yearStart: 2000, yearEnd: 2024 }
 ]
+
+export const SKILLS_ITEMS = [
+    { name: 'Навык 1', description: 'Описание' },
+    { name: 'Навык 2', description: 'Описание' },
+    { name: 'Навык 3', description: 'Описание' },
+    { name: 'Навык 5', description: 'Описание' }
+]
