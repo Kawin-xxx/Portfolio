@@ -31,4 +31,7 @@ export default {
 </template>
 
 <style scoped>
+.projects {
+    scroll-margin-top: 60px;
+}
 </style>

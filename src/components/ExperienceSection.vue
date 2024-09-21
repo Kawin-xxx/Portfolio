@@ -30,4 +30,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.experience {
+    scroll-margin-top: 60px;
+}
 </style>

@@ -39,7 +39,6 @@
 <style scoped lang="scss">
 .main-container {
   flex-shrink: 1;
-  margin-top: 60px;
 }
 
 .page {

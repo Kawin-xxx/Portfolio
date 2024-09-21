@@ -1,7 +1,6 @@
 <script>
 import SocialLinks from './SocialLinks.vue';
 
-
 export default {
     components: {
         SocialLinks
@@ -15,7 +14,6 @@ export default {
             <h2 class="contacts__title">Контакты</h2>
             <p class="contsacts__description">Описание</p>
         </div>
-
 
         <SocialLinks class="contacts__social" />
 
@@ -40,4 +38,7 @@ export default {
 </template>
 
 <style scoped>
+.contsacts {
+    scroll-margin-top: 60px;
+}
 </style>

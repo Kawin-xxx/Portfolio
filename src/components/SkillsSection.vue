@@ -30,4 +30,7 @@ export default {
 </template>
 
 <style scoped>
+.skills {
+    scroll-margin-top: 60px;
+}
 </style>
