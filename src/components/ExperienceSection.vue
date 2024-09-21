@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <section class="experience" id="experience">
+    <section class="experience section" id="experience">
         <div class="experience__container container">
             <h2 class="experience__title">Мой опыт</h2>
             <ul class="experience__list">

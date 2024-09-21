@@ -1,7 +1,6 @@
 <script>
 import SocialLinks from './SocialLinks.vue';
 
-
 export default {
     components: {
         SocialLinks
@@ -10,12 +9,11 @@ export default {
 </script>
 
 <template>
-    <section class="contacts" id="contacts">
+    <section class="contacts section" id="contacts">
         <div class="contacts__container container">
             <h2 class="contacts__title">Контакты</h2>
             <p class="contsacts__description">Описание</p>
         </div>
-
 
         <SocialLinks class="contacts__social" />
 

@@ -19,3 +19,17 @@ export const EXPERIENS_ITEMS = [
     { name: 'Диплом', description: 'Описание', yearStart: 2000, yearEnd: 2024 },
     { name: '23 devs', description: 'Описание', yearStart: 2000, yearEnd: 2024 }
 ]
+
+export const SKILLS_ITEMS = [
+    { name: 'Навык 1', description: 'Описание' },
+    { name: 'Навык 2', description: 'Описание' },
+    { name: 'Навык 3', description: 'Описание' },
+    { name: 'Навык 5', description: 'Описание' }
+]
+
+export const PROJECTS_ITEMS = [
+    { name: 'Проект 1', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 2', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 3', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 4', img: 'Фото', gitLink: '#', siteLink: '#' }
+]

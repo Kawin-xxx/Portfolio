@@ -1,22 +1,30 @@
 <script>
+import { PROJECTS_ITEMS } from '@/constants.js'
+import ProjectCard from '@/components/ProjectCard.vue'
 
 export default {
+    components: {
+        ProjectCard
+    },
+    data() {
+        return {
+            projectsItems: PROJECTS_ITEMS
+        }
+    }
 }
 </script>
 
 <template>
-    <section class="projects" id="projects">
+    <section class="projects section" id="projects">
         <div class="projects__container container">
             <h2 class="projects__title">Мои проекты</h2>
             <ul class="projects__list">
-                <li class="projects__item">
-                    <h3>Проект 1</h3>
-                    <span>Картинка</span>
-                </li>
-                <div class="projects__buttons-wrapper">
-                    <a href="" class="projects__button">Git</a>
-                    <a href="" class="projects__button">Web-site</a>
-                </div>
+                <ProjectCard
+                    class="projects__item"
+                    v-for="(item, index) in projectsItems"
+                    :key="index"
+                    :cardData="item"
+                />
             </ul>
         </div>
     </section>

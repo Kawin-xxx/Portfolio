@@ -67,7 +67,8 @@ export default {
 <style scoped lang="scss">
 .header {
     min-height: 60px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color: black;
 }

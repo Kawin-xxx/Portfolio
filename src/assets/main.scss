@@ -50,6 +50,10 @@ a,
   max-width: 1400px;
 }
 
+.section {
+  scroll-margin-top: 60px;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
