@@ -26,3 +26,10 @@ export const SKILLS_ITEMS = [
     { name: 'Навык 3', description: 'Описание' },
     { name: 'Навык 5', description: 'Описание' }
 ]
+
+export const PROJECTS_ITEMS = [
+    { name: 'Проект 1', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 2', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 3', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 4', img: 'Фото', gitLink: '#', siteLink: '#' }
+]
