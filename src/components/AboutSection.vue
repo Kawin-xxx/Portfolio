@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <section class="about" id="about">
+    <section class="about section" id="about">
         <div class="about__container container">
             <div class="about__description">
                 <h1 class="about__title">Привет, меня зовут Екатерина Олейникова</h1>
@@ -31,7 +31,4 @@ export default {
 </template>
 
 <style scoped>
-.about {
-    scroll-margin-top: 60px;
-}
 </style>

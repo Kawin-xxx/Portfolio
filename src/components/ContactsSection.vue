@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <section class="contacts" id="contacts">
+    <section class="contacts section" id="contacts">
         <div class="contacts__container container">
             <h2 class="contacts__title">Контакты</h2>
             <p class="contsacts__description">Описание</p>
@@ -38,7 +38,4 @@ export default {
 </template>
 
 <style scoped>
-.contsacts {
-    scroll-margin-top: 60px;
-}
 </style>

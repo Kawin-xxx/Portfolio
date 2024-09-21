@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <section class="projects" id="projects">
+    <section class="projects section" id="projects">
         <div class="projects__container container">
             <h2 class="projects__title">Мои проекты</h2>
             <ul class="projects__list">
@@ -31,7 +31,4 @@ export default {
 </template>
 
 <style scoped>
-.projects {
-    scroll-margin-top: 60px;
-}
 </style>
