@@ -1,15 +1,9 @@
 <script>
-import { EXPERIENS_ITEMS } from '@/constants.js'
 export default {
     props: {
         cardData: {
             type: { name: String, description: String, yearStart: Number, yearEnd: Number },
             required: true
-        }
-    },
-    data() {
-        return {
-            experienceItems: EXPERIENS_ITEMS
         }
     }
 }
