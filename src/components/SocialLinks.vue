@@ -16,23 +16,37 @@ export default {
             :key="index"
             class="social__item"
         >
-            <a :href="item.link" width="16" height="16" :aria-label="item.name" class="social__link">
-                <svg>
-                    <use :xlink:href="item.icon" width="24px" height="24px" fill="white"/>
+            <a :href="item.link" class="social__link">
+                <svg :aria-label="item.name" width="24px" height="24px">
+                    <use :xlink:href="item.icon" fill="white"/>
                 </svg>
+                <span class="visually-hidden">Ссылка на социальную сеть вконтакте.</span>
             </a>
         </li>
     </ul>
 </template>
 
-<style scoped>
-.social__link {
-    width: 24px;
-    height: 24px;
+<style scoped lang="scss">
+.social {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.social__link svg {
-    width: 24px;
-    height: 24px;
+.social__item {
+    width: 40px;
+    height: 40px;
+}
+
+.social__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color-white;
+    border-radius: 50%;
 }
 </style>
