@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <section class="projects section" id="projects">
+    <section class="main-container__projects section projects" id="projects">
         <div class="projects__container container">
             <h2 class="projects__title">Мои проекты</h2>
             <ul class="projects__list">
@@ -30,5 +30,22 @@ export default {
     </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.projects__container {
+    margin: 0 auto;
+    padding: 50px 20px 30px;
+}
+
+.projects__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects__list {
+    list-style: none;
+}
+
+.projects__item:not(:last-child) {
+    margin-bottom: 20px;
+}
 </style>
