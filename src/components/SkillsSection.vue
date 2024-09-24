@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <section class="skills section" id="skills">
+    <section class=" main-container__skills skills section" id="skills">
         <div class="skills__container container">
             <h2 class="skills__title">Мои навыки</h2>
             <ul class="skills__list">
@@ -29,5 +29,22 @@ export default {
     </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.skills__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills__container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.skills__list {
+    list-style: none;
+}
+
+.skills__item:not(:last-child) {
+    margin-bottom: 30px;
+}
 </style>
