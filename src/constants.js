@@ -7,10 +7,10 @@ export const MENU_ITEMS = [
 ]
 
 export const SOCIAL_LINKS = [
-    { name: 'git', link: '', icon: ''},
-    { name: 'tg', link: '', icon: ''},
-    { name: 'ig', link: '', icon: ''},
-    { name: 'vk', link: '', icon: ''}
+    { name: 'git', link: '', icon: '#icon-github'},
+    { name: 'telegram', link: '', icon: '#icon-telegram'},
+    { name: 'instagram', link: '', icon: '#icon-instagram'},
+    { name: 'vk', link: '', icon: '#icon-vk'}
 ]
 
 export const EXPERIENS_ITEMS = [
