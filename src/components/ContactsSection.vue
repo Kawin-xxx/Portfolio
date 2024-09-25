@@ -1,9 +1,11 @@
 <script>
 import SocialLinks from './SocialLinks.vue';
+import ContactsForm from './ContactsForm.vue';
 
 export default {
     components: {
-        SocialLinks
+        SocialLinks,
+        ContactsForm
     }
 }
 </script>
@@ -16,22 +18,8 @@ export default {
 
             <SocialLinks class="contacts__social" />
 
-            <div class="contacts__form form">
-                <form action="">
-                    <p class="form-description">Оставьте мне сообщение</p>
-                    <label for="">
-                        <input type="text" placeholder="Имя">
-                        <span></span>
-                    </label>
-                    <label for="">
-                        <input type="text" placeholder="Email">
-                        <span></span>
-                    </label>
-                    <label for="">
-                        <input type="text" placeholder="Сообщение">
-                        <span></span>
-                    </label>
-                </form>
+            <div class="contacts__form-wrapper">
+                <ContactsForm />
             </div>
         </div>
     </section>
@@ -54,9 +42,5 @@ export default {
 
 .contacts__social {
     margin-bottom: 20px;
-}
-
-.form-description {
-    margin-bottom: 10px;
 }
 </style>
