@@ -16,5 +16,14 @@ export default {
     </li>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.skills-card {
+    border: 1px solid $color-white;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.skills-card__title {
+    margin-bottom: 10px;
+}
 </style>
