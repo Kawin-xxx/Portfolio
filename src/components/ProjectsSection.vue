@@ -33,7 +33,8 @@ export default {
 <style scoped lang="scss">
 .projects__container {
     margin: 0 auto;
-    padding: 50px 20px 30px;
+    padding: 50px 20px 40px;
+    background-color: var(--color-background-dark);
 }
 
 .projects__title {

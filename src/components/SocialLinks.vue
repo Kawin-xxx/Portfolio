@@ -17,8 +17,8 @@ export default {
             class="social__item"
         >
             <a :href="item.link" class="social__link">
-                <svg :aria-label="item.name" width="24px" height="24px">
-                    <use :xlink:href="item.icon" fill="white"/>
+                <svg :aria-label="item.name" width="24px" height="24px" class="social__icon">
+                    <use :xlink:href="item.icon"/>
                 </svg>
                 <span class="visually-hidden">Ссылка на социальную сеть вконтакте.</span>
             </a>
@@ -46,7 +46,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid $color-white;
+    border: 1px solid var(--color-accent);
     border-radius: 50%;
+}
+
+.social__icon {
+    fill: var(--color-accent);
 }
 </style>

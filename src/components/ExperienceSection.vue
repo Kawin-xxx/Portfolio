@@ -32,7 +32,8 @@ export default {
 <style scoped lang="scss">
 .experience__container {
     margin: 0 auto;
-    padding: 50px 20px 30px;
+    padding: 50px 20px 40px;
+    background-color: var(--color-background-dark);
 }
 
 .experience__title {
@@ -49,7 +50,8 @@ export default {
     &::before {
         width: 2px;
         height: 100%;
-        background-color: $color-white;
+        background-color: var(--color-accent);
+        box-shadow: 0 0 10px var(--color-accent);
         position: absolute;
         left: 0;
         top: 0;

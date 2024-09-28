@@ -5,7 +5,7 @@ export default {
         return {
             isMenuOpen: false,
             menuItems: MENU_ITEMS,
-            activeSection: ''
+            activeSection: '',
         }
     },
     methods: {
@@ -20,11 +20,14 @@ export default {
 </script>
 
 <template>
-    <header class="header">
+    <header class="header" :data-theme="theme">
         <div class="header__container container">
             <div class="header__logo-wrapper logo">
                 <a class="logo__link" href="#">
-                    Логотип
+                    <svg aria-label="Логотип." width="200px" height="25px">
+                        <use xlink:href="#icon-logo" fill="white"/>
+                    </svg>
+                    <!-- Логотип -->
                 </a>
             </div>
 
@@ -70,7 +73,8 @@ export default {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: black;
+    z-index: 5;
+    background-color: var(--color-background-dark);
 }
 
 .header__container {
@@ -92,13 +96,13 @@ export default {
     right: 0;
     display: block;
     padding: 10px;
-    border-left: 1px solid $color-white;
-    border-bottom: 1px solid $color-white;
+    border-left: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .site-list {
     list-style: none;
-    background-color: $color-black;
+    background-color: var(--color-background-dark);
 
     & .site-list__link {
         height: 100%;
@@ -107,8 +111,8 @@ export default {
         padding-bottom: 0;
 
         &--active {
-            border-bottom: 1px solid $color-white;
-            color: $color-white;
+            border-bottom: 1px solid var(--color-accent);
+            color: var(--color-accent);
         }
     }
 }
@@ -130,8 +134,8 @@ export default {
     right: 22px;
     height: 1.5px;
     width: 16px;
-    box-shadow: 0 5px 0 0 $color-white, 0 10px 0 0 $color-white;
-    background-color: $color-white;
+    box-shadow: 0 5px 0 0 var(--color-accent), 0 10px 0 0 var(--color-accent);
+    background-color: var(--color-accent);
   }
 }
 
@@ -144,7 +148,7 @@ export default {
     height: 1.5px;
     width: 16px;
     transform: rotate(45deg);
-    background-color: $color-white;
+    background-color: var(--color-accent);
   }
 
   &::after {
@@ -155,7 +159,7 @@ export default {
     height: 1.5px;
     width: 16px;
     transform: rotate(-45deg);
-    background-color: $color-white;
+    background-color: var(--color-accent);
   }
 }
 
@@ -172,5 +176,11 @@ export default {
 .logo {
     display: flex;
     align-items: center;
+}
+
+.logo__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 </style>

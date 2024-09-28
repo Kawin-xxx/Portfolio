@@ -38,6 +38,7 @@ export default {
 .skills__container {
     margin: 0 auto;
     padding: 20px;
+    padding-bottom: 40px;
 }
 
 .skills__list {
