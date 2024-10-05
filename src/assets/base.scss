@@ -1,64 +1,30 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
   --color-black: #333333;
   --color-white: #ffffff;
   --color-total-black: #222121;
   --color-aqua: #4BDADA;
   --color-aqua-dark: #00E1D1;
-
-  // --vt-c-white: #ffffff;
-  // --vt-c-white-soft: #f8f8f8;
-  // --vt-c-white-mute: #f2f2f2;
-
-  // --vt-c-black: #181818;
-  // --vt-c-black-soft: #222222;
-  // --vt-c-black-mute: #282828;
-
-  // --vt-c-indigo: #2c3e50;
-
-  // --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  // --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  // --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  // --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  // --vt-c-text-light-1: var(--vt-c-indigo);
-  // --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  // --vt-c-text-dark-1: var(--vt-c-white);
-  // --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --color-beige: #b4ae9c;
 }
 
-/* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
+  --color-background: var(--color-black);
+  --color-background-dark: var(--color-total-black);
+  --color-accent: var(--color-aqua);
+  --color-accent-dark: var(--color-aqua-dark);
+  --color-text: var(--color-white);
+  --color-dark-text: var(--color-total-black);
+  --color-border: var(--color-white);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-black);
-    --color-background-dark: var(--color-total-black);
-    --color-accent: var(--color-aqua);
-    --color-accent-dark: var(--color-aqua-dark);
-    // --color-background-soft: var(--vt-c-black-soft);
-    // --color-background-mute: var(--vt-c-black-mute);
-
-    // --color-border: var(--vt-c-divider-dark-2);
-    // --color-border-hover: var(--vt-c-divider-dark-1);
-
-    // --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--color-white);
-    --color-dark-text: var(--color-total-black);
-    --color-border: var(--color-white);
-  }
+[color-theme= 'light'] {
+  --color-background: #e0e0e0;
+  --color-background-dark: #d3e1e1;
+  --color-accent: #4b9a9a;
+  --color-accent-dark: #c7d4d4;
+  --color-text: #333333;
+  --color-dark-text: #111111;
+  --color-border: #cccccc;
 }
 
 *,

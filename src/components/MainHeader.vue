@@ -1,11 +1,14 @@
 <script>
 import { MENU_ITEMS } from '@/constants.js'
+import ToggleButton from './ToggleButton.vue';
 export default {
+    components: { ToggleButton },
     data() {
         return {
             isMenuOpen: false,
             menuItems: MENU_ITEMS,
             activeSection: '',
+            isDarkTheme: true,
         }
     },
     methods: {
@@ -14,20 +17,25 @@ export default {
         },
         scrollToSection(sectionName) {
             this.activeSection = sectionName;
-        }
+        },
+        changeTheme() {
+            const newTheme = this.isDarkTheme ? 'light' : 'dark';
+            this.isDarkTheme = !this.isDarkTheme;
+            document.documentElement.setAttribute('color-theme', newTheme);
+            localStorage.setItem('color-theme', newTheme);
+        },
     },
 }
 </script>
 
 <template>
-    <header class="header" :data-theme="theme">
+    <header class="header">
         <div class="header__container container">
             <div class="header__logo-wrapper logo">
                 <a class="logo__link" href="#">
                     <svg aria-label="Логотип." width="200px" height="25px">
                         <use xlink:href="#icon-logo" fill="white"/>
                     </svg>
-                    <!-- Логотип -->
                 </a>
             </div>
 
@@ -54,11 +62,14 @@ export default {
                             <a
                                 :href="'#'+ item.href"
                                 @click="scrollToSection(item.href)"
-                                class="site-list__link"
+                                class="site-list__link site-list__link--space"
                                 :class="{ 'site-list__link--active': activeSection === item.href }"
                             >
                                 {{ item.name }}
                             </a>
+                        </li>
+                        <li class="site-list__item checkbox">
+                            <toggle-button @changeTheme="changeTheme"></toggle-button>
                         </li>
                     </ul>
                 </transition>
@@ -109,6 +120,11 @@ export default {
         display: block;
         border-bottom: 1px solid transparent;
         padding-bottom: 0;
+        color: var(--color-text);
+
+        &--space {
+            margin-bottom: 10px;
+        }
 
         &--active {
             border-bottom: 1px solid var(--color-accent);
