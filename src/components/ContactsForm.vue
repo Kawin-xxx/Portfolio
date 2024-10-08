@@ -63,7 +63,7 @@ export default {
     <form
         action="https://formspree.io/f/xanwgrae"
         method="post"
-        class="contacts__form form"
+        class="form"
         @submit.prevent="handleSubmit"
     >
         <p class="form__description">Оставьте мне сообщение</p>

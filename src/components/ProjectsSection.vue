@@ -44,9 +44,19 @@ export default {
 
 .projects__list {
     list-style: none;
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: $tablet-width) {
+        display: grid;
+        gap: 20px;
+    }
 }
 
 .projects__item:not(:last-child) {
     margin-bottom: 20px;
+
+    @media (min-width: $tablet-width) {
+        margin-bottom: 0;
+    }
 }
 </style>
