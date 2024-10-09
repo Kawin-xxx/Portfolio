@@ -30,6 +30,10 @@ export default {
 .contacts__container {
     margin: 0 auto;
     padding: 20px;
+
+    @media (min-width: $tablet-width) {
+        padding: 40px;
+    }
 }
 
 .contacts__title {
@@ -43,10 +47,26 @@ export default {
         justify-content: space-between;
         column-gap: 30px;
     }
+
+    @media (min-width: $desktop-width) {
+        display: block;
+    }
+}
+
+.contacts__social-wrapper {
+    @media (min-width: $desktop-width) {
+        margin: 0 auto;
+        width: fit-content;
+    }
 }
 
 .contsacts__description {
-    margin-bottom: 10px
+    margin-bottom: 10px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 20px;
+        text-align: center;
+    }
 }
 
 .contacts__social {
@@ -55,11 +75,23 @@ export default {
     @media (min-width: $tablet-width) {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    @media (min-width: $desktop-width) {
+        flex-direction: row;
+        margin-bottom: 30px;
     }
 }
 
 .contacts__form {
     flex: 1;
+
+    @media (min-width: $desktop-width) {
+        flex: none;
+        width: 40%;
+        margin: 0 auto;
+    }
 }
 </style>

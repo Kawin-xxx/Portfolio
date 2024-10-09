@@ -38,6 +38,10 @@ h2 {
   @media (min-width: $tablet-width) {
     font-size: 35px;
   }
+
+  @media (min-width: $desktop-width) {
+    font-size: 40px;
+  }
 }
 
 .container {
@@ -57,8 +61,8 @@ img {
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-    color: hsla(160, 100%, 37%, 0.2);
+    // background-color: hsla(160, 100%, 37%, 0.2);
+    // color: hsla(160, 100%, 37%, 0.2);
     // background-color: var(--color-accent);
     // color: var(--color-dark-text);
   }

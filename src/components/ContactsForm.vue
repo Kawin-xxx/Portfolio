@@ -137,6 +137,10 @@ export default {
 <style scoped lang="scss">
 .form__description {
     margin-bottom: 10px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 20px;
+    }
 }
 
 .form__label {
@@ -151,6 +155,10 @@ export default {
     font-size: 16px;
     line-height: 20px;
     transition: 0.3s ease;
+
+    @media (min-width: $desktop-width) {
+        font-size: 18px;
+    }
 }
 
 .form__inputs-wrapper {
@@ -185,10 +193,14 @@ export default {
         line-height: 20px;
         transition: 0.3s ease;
     }
+
+    @media (min-width: $desktop-width) {
+        width: 100%;
+        font-size: 17px;
+    }
 }
 
 .form__textarea {
-    width: 100%;
     height: 150px;
     resize: none;
 }

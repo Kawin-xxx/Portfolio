@@ -52,27 +52,25 @@ export default {
                     </span>
                 </button>
 
-                <transition name="fade">
-                    <ul class="navigation__list site-list" v-if="isMenuOpen">
-                        <li
-                            v-for="(item, index) in menuItems"
-                            :key="index"
-                            class="site-list__item"
+                <ul class="navigation__list site-list" :class="{ 'site-list--open': isMenuOpen }">
+                    <li
+                        v-for="(item, index) in menuItems"
+                        :key="index"
+                        class="site-list__item"
+                    >
+                        <a
+                            :href="'#'+ item.href"
+                            @click="scrollToSection(item.href)"
+                            class="site-list__link"
+                            :class="{ 'site-list__link--active': activeSection === item.href }"
                         >
-                            <a
-                                :href="'#'+ item.href"
-                                @click="scrollToSection(item.href)"
-                                class="site-list__link site-list__link--space"
-                                :class="{ 'site-list__link--active': activeSection === item.href }"
-                            >
-                                {{ item.name }}
-                            </a>
-                        </li>
-                        <li class="site-list__item checkbox">
-                            <toggle-button @changeTheme="changeTheme"></toggle-button>
-                        </li>
-                    </ul>
-                </transition>
+                            {{ item.name }}
+                        </a>
+                    </li>
+                    <li class="site-list__item checkbox">
+                        <toggle-button @changeTheme="changeTheme"></toggle-button>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -86,16 +84,31 @@ export default {
     width: 100%;
     z-index: 5;
     background-color: var(--color-background-dark);
+
+    @media (min-width: $tablet-width) {
+        height: fit-content;
+        min-height: 80px;
+    }
 }
 
 .header__container {
     padding-left: 20px;
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: $tablet-width) {
+        padding: 0 20px;
+        gap: 30px;
+    }
 }
 
 .navigation {
-    height: 60px;
+    min-height: 60px;
+
+    @media (min-width: $tablet-width) {
+        height: 100%;
+        min-height: 80px;
+    }
 }
 
 .navigation__list {
@@ -109,11 +122,28 @@ export default {
     padding: 10px;
     border-left: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
+
+    @media (min-width: $tablet-width) {
+        position: static;
+        width: 100%;
+        border: none;
+        top: 0;
+        gap: 20px;
+        padding: 0;
+        height: 100%;
+        min-height: 80px;
+    }
 }
 
 .site-list {
+    display: none;
     list-style: none;
     background-color: var(--color-background-dark);
+
+    @media (min-width: $tablet-width) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     & .site-list__link {
         height: 100%;
@@ -122,14 +152,28 @@ export default {
         padding-bottom: 0;
         color: var(--color-text);
 
-        &--space {
-            margin-bottom: 10px;
-        }
-
         &--active {
             border-bottom: 1px solid var(--color-accent);
             color: var(--color-accent);
         }
+
+        &:hover {
+            color: var(--color-accent);
+            border-bottom: 1px solid var(--color-accent);
+        }
+
+        @media (min-width: $tablet-width) {
+            height: fit-content;
+        }
+    }
+
+    &.site-list--open {
+        display: block;
+    }
+
+    & .site-list__item {
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -138,8 +182,12 @@ export default {
   position: relative;
   background-color: inherit;
   width: 60px;
-  height: 60px;
+  min-height: 60px;
   cursor: pointer;
+
+    @media (min-width: $tablet-width) {
+        display: none;
+    }
 }
 
 .navigation__toggle--close {

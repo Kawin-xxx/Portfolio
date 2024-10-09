@@ -47,6 +47,10 @@ export default {
     margin: 0 auto;
     padding: 20px;
     padding-bottom: 40px;
+
+    @media (min-width: $tablet-width) {
+        padding: 40px;
+    }
 }
 
 .about__photo-wrapper {
@@ -97,8 +101,18 @@ export default {
     }
 }
 
+.about__description-wrapper {
+    @media (min-width: $desktop-width) {
+        text-align: center;
+    }
+}
+
 .about__title {
     font-size: 25px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 35px;
+    }
 
     &--mobile {
         @media (min-width: $tablet-width) {
@@ -164,11 +178,19 @@ export default {
 .about__text {
     margin-bottom: 10px;
     font-size: 23px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 35px;
+    }
 }
 
 .about__description {
     margin-bottom: 20px;
     font-size: 18px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 20px;
+    }
 }
 
 .about__button {
@@ -186,6 +208,17 @@ export default {
         color: var(--color-dark-text);
         background-color: var(--color-accent);
         box-shadow: 0 0 20px var(--color-accent);
+    }
+
+    @media (min-width: $desktop-width) {
+        margin: 0 auto 20px;
+        font-size: 20px;
+    }
+}
+
+.about__social {
+    @media (min-width: $desktop-width) {
+        justify-content: center;
     }
 }
 </style>

@@ -31,5 +31,7 @@ export const PROJECTS_ITEMS = [
     { name: 'Проект 1', img: 'Фото', gitLink: '#', siteLink: '#' },
     { name: 'Проект 2', img: 'Фото', gitLink: '#', siteLink: '#' },
     { name: 'Проект 3', img: 'Фото', gitLink: '#', siteLink: '#' },
-    { name: 'Проект 4', img: 'Фото', gitLink: '#', siteLink: '#' }
+    { name: 'Проект 4', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 5', img: 'Фото', gitLink: '#', siteLink: '#' },
+    { name: 'Проект 6', img: 'Фото', gitLink: '#', siteLink: '#' }
 ]

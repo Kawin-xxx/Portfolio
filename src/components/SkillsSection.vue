@@ -39,6 +39,11 @@ export default {
     margin: 0 auto;
     padding: 20px;
     padding-bottom: 40px;
+
+    @media (min-width: $tablet-width) {
+        padding: 40px;
+        padding-bottom: 50px;
+    }
 }
 
 .skills__list {

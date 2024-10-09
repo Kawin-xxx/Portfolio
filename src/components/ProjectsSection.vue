@@ -31,10 +31,17 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.main-container__projects {
+    background-color: var(--color-background-dark);
+}
+
 .projects__container {
     margin: 0 auto;
     padding: 50px 20px 40px;
-    background-color: var(--color-background-dark);
+
+    @media (min-width: $tablet-width) {
+        padding: 50px 40px;
+    }
 }
 
 .projects__title {
@@ -44,11 +51,15 @@ export default {
 
 .projects__list {
     list-style: none;
-    grid-template-columns: 1fr 1fr;
 
     @media (min-width: $tablet-width) {
+        grid-template-columns: 1fr 1fr;
         display: grid;
         gap: 20px;
+    }
+
+    @media (min-width: $desktop-width) {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
