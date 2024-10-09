@@ -27,7 +27,8 @@ export default {
 
 <style scoped lang="scss">
 .project-card {
-    border: 1px solid $color-white;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-accent);
     border-radius: 10px;
     padding: 20px 10px;
 }
@@ -35,11 +36,13 @@ export default {
 .project__title {
     text-align: center;
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .project__image {
     border-radius: 5px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .project-card__buttons-wrapper {
@@ -50,8 +53,19 @@ export default {
 }
 
 .button {
-    border: 1px solid $color-white;
-    border-radius: 20px;
+    display: block;
+    width: fit-content;
     padding: 5px 10px;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 20px;
+    overflow-wrap: break-word;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--color-dark-text);
+        background-color: var(--color-accent);
+        box-shadow: 0 0 10px var(--color-accent);
+    }
 }
 </style>

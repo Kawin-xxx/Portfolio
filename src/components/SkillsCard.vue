@@ -18,12 +18,15 @@ export default {
 
 <style scoped lang="scss">
 .skills-card {
-    border: 1px solid $color-white;
+    border: 1px solid var(--color-accent-dark);
+    background-color: var(--color-accent-dark);
+    color: var(--color-dark-text);
     padding: 30px 20px;
     border-radius: 10px;
 }
 
 .skills-card__title {
     margin-bottom: 10px;
+    font-weight: 500;
 }
 </style>

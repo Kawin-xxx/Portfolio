@@ -1,11 +1,14 @@
 <script>
 import { MENU_ITEMS } from '@/constants.js'
+import ToggleButton from './ToggleButton.vue';
 export default {
+    components: { ToggleButton },
     data() {
         return {
             isMenuOpen: false,
             menuItems: MENU_ITEMS,
-            activeSection: ''
+            activeSection: '',
+            isDarkTheme: true,
         }
     },
     methods: {
@@ -14,7 +17,13 @@ export default {
         },
         scrollToSection(sectionName) {
             this.activeSection = sectionName;
-        }
+        },
+        changeTheme() {
+            const newTheme = this.isDarkTheme ? 'light' : 'dark';
+            this.isDarkTheme = !this.isDarkTheme;
+            document.documentElement.setAttribute('color-theme', newTheme);
+            localStorage.setItem('color-theme', newTheme);
+        },
     },
 }
 </script>
@@ -24,7 +33,9 @@ export default {
         <div class="header__container container">
             <div class="header__logo-wrapper logo">
                 <a class="logo__link" href="#">
-                    Логотип
+                    <svg aria-label="Логотип." width="200px" height="25px">
+                        <use xlink:href="#icon-logo" fill="white"/>
+                    </svg>
                 </a>
             </div>
 
@@ -51,11 +62,14 @@ export default {
                             <a
                                 :href="'#'+ item.href"
                                 @click="scrollToSection(item.href)"
-                                class="site-list__link"
+                                class="site-list__link site-list__link--space"
                                 :class="{ 'site-list__link--active': activeSection === item.href }"
                             >
                                 {{ item.name }}
                             </a>
+                        </li>
+                        <li class="site-list__item checkbox">
+                            <toggle-button @changeTheme="changeTheme"></toggle-button>
                         </li>
                     </ul>
                 </transition>
@@ -70,7 +84,8 @@ export default {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: black;
+    z-index: 5;
+    background-color: var(--color-background-dark);
 }
 
 .header__container {
@@ -92,23 +107,28 @@ export default {
     right: 0;
     display: block;
     padding: 10px;
-    border-left: 1px solid $color-white;
-    border-bottom: 1px solid $color-white;
+    border-left: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .site-list {
     list-style: none;
-    background-color: $color-black;
+    background-color: var(--color-background-dark);
 
     & .site-list__link {
         height: 100%;
         display: block;
         border-bottom: 1px solid transparent;
         padding-bottom: 0;
+        color: var(--color-text);
+
+        &--space {
+            margin-bottom: 10px;
+        }
 
         &--active {
-            border-bottom: 1px solid $color-white;
-            color: $color-white;
+            border-bottom: 1px solid var(--color-accent);
+            color: var(--color-accent);
         }
     }
 }
@@ -130,8 +150,8 @@ export default {
     right: 22px;
     height: 1.5px;
     width: 16px;
-    box-shadow: 0 5px 0 0 $color-white, 0 10px 0 0 $color-white;
-    background-color: $color-white;
+    box-shadow: 0 5px 0 0 var(--color-accent), 0 10px 0 0 var(--color-accent);
+    background-color: var(--color-accent);
   }
 }
 
@@ -144,7 +164,7 @@ export default {
     height: 1.5px;
     width: 16px;
     transform: rotate(45deg);
-    background-color: $color-white;
+    background-color: var(--color-accent);
   }
 
   &::after {
@@ -155,7 +175,7 @@ export default {
     height: 1.5px;
     width: 16px;
     transform: rotate(-45deg);
-    background-color: $color-white;
+    background-color: var(--color-accent);
   }
 }
 
@@ -172,5 +192,11 @@ export default {
 .logo {
     display: flex;
     align-items: center;
+}
+
+.logo__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 </style>

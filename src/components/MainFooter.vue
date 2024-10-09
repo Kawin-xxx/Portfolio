@@ -21,7 +21,7 @@ export default {
 .footer {
     min-height: 60px;
     width: 100%;
-    background-color: black;
+    background-color: var(--color-background-dark);
 }
 
 .footer__container {

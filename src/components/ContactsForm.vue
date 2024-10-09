@@ -165,8 +165,11 @@ export default {
     width: 100%;
     border-radius: 5px;
     padding: 20px;
-    border: 1px solid $color-white;
-    background-color: $color-black;
+    padding-bottom: 10px;
+    border: 1px solid var(--color-accent);
+    background-color: var(--color-background);
+    box-shadow: 0 0 3px var(--color-accent);
+    color: var(--color-text);
 
     &::placeholder {
         color: transparent;
@@ -185,7 +188,9 @@ export default {
 }
 
 .form__textarea {
+    width: 100%;
     height: 150px;
+    resize: none;
 }
 
 .form__message {
@@ -203,11 +208,29 @@ export default {
 .form__button {
     display: block;
     width: fit-content;
-    padding: 5px 10px;
-    margin-bottom: 20px;
-    border: 1px solid $color-white;
+    font-size: 17px;
+    padding: 10px 20px;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    background-color: inherit;
     border-radius: 20px;
     overflow-wrap: break-word;
     cursor: pointer;
+
+    &:hover {
+        color: var(--color-dark-text);
+        background-color: var(--color-accent);
+        box-shadow: 0 0 20px var(--color-accent);
+    }
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 </style>

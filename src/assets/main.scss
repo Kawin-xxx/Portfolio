@@ -1,23 +1,12 @@
 @import './base.scss';
 
 #app {
-  /* max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem; */
-  /* padding: 2rem; */
   font-weight: normal;
 }
 
 html {
   scroll-behavior: smooth
 }
-
-// #app {
-//   display: grid;
-//   grid-template-rows: auto 1fr auto;
-//   min-height: 100vh;
-//   grid-template-columns: 100%;
-// }
 
 * {
   margin: 0;
@@ -36,11 +25,15 @@ html {
   overflow: hidden;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: $color-white;
   transition: 0.4s;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .container {
@@ -61,6 +54,9 @@ img {
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
+    color: hsla(160, 100%, 37%, 0.2);
+    // background-color: var(--color-accent);
+    // color: var(--color-dark-text);
   }
 }
 

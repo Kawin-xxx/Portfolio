@@ -4,7 +4,7 @@ import SocialLinks from './SocialLinks.vue';
 export default {
     components: {
         SocialLinks
-    }
+    },
 }
 </script>
 
@@ -24,10 +24,10 @@ export default {
             </div>
 
             <div class="about__description-wrapper">
-                <h1 class="about__title about__title--mobile">Привет, меня зовут Катя</h1>
-                <h1 class="about__title about__title--desktop">Привет, меня зовут Екатерина Олейникова</h1>
+                <h1 class="about__title about__title--mobile">Привет, меня зовут <span class="about__accent">Катя</span></h1>
+                <h1 class="about__title about__title--desktop">Привет, меня зовут <span class="about__accent">Екатерина Олейникова</span></h1>
 
-                <p class="about__text">Я фронтенд разработчик</p>
+                <p class="about__text">Я <span class="about__accent about__typing-text">фронтенд разработчик</span></p>
                 <p class="about__description">
                     Люблю фронтенд и все, что с ним связано!
                     Имею диплом бакалавра по направлению прикладная
@@ -46,15 +46,45 @@ export default {
 .about__container {
     margin: 0 auto;
     padding: 20px;
+    padding-bottom: 40px;
 }
 
 .about__photo-wrapper {
     margin: 0 auto 20px;
     width: max-content;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        content: "";
+        border: 2px solid var(--color-accent);
+        background-color: inherit;
+        top: 10px;
+        left: 10px;
+    }
+
+    // &::after {
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     border-radius: 50px;
+    //     content: "";
+    //     background-color: var(--color-accent);
+    //     opacity: 20%;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 3;
+    // }
 }
 
 .about__image {
-    border-radius: 20px;
+    border-radius: 50px;
+    border: 2px solid var(--color-border);
+    position: relative;
+    z-index: 2;
 
     @media (min-width: $tablet-width) {
         width: 200px;
@@ -68,6 +98,8 @@ export default {
 }
 
 .about__title {
+    font-size: 25px;
+
     &--mobile {
         @media (min-width: $tablet-width) {
             display: none;
@@ -83,12 +115,60 @@ export default {
     }
 }
 
+.about__accent {
+    color: var(--color-accent);
+}
+
+.about__typing-text {
+    color: var(--color-accent);
+    font-weight: bold;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid;
+    font-family: monospace;
+    vertical-align: bottom;
+    animation: typing 4s steps(20, end), blink 0.75s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+    
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20ch;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-border);
+  }
+}
+
 .about__text {
     margin-bottom: 10px;
+    font-size: 23px;
 }
 
 .about__description {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
 .about__button {
@@ -96,9 +176,16 @@ export default {
     width: fit-content;
     padding: 5px 10px;
     margin-bottom: 20px;
-    border: 1px solid $color-white;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
     border-radius: 20px;
     overflow-wrap: break-word;
     cursor: pointer;
+
+    &:hover {
+        color: var(--color-dark-text);
+        background-color: var(--color-accent);
+        box-shadow: 0 0 20px var(--color-accent);
+    }
 }
 </style>

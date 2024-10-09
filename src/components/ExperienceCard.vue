@@ -27,7 +27,8 @@ export default {
         width: 20px;
         height: 20px;
         border-radius: 30px;
-        background-color: $color-white;
+        background-color: var(--color-accent);
+        box-shadow: 0 0 10px var(--color-accent);
         position: absolute;
         left: -29px;
         top: 0;
@@ -41,9 +42,15 @@ export default {
 }
 
 .card__button {
-    border: 1px solid $color-white;
+    border: 1px solid var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 30px;
+}
+
+.card__title {
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .experience__item:not(:last-child) {
