@@ -30,10 +30,17 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.main-container__experience {
+    background-color: var(--color-background-dark);
+}
+
 .experience__container {
     margin: 0 auto;
     padding: 50px 20px 40px;
-    background-color: var(--color-background-dark);
+
+    @media (min-width: $tablet-width) {
+        padding: 50px 40px;
+    }
 }
 
 .experience__title {

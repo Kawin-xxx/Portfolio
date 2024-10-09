@@ -39,6 +39,10 @@ export default {
 .card__year {
     display: inline-block;
     margin-bottom: 10px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 25px;
+    }
 }
 
 .card__button {
@@ -46,11 +50,19 @@ export default {
     box-shadow: 0 0 10px var(--color-accent);
     border-radius: 50px;
     padding: 30px;
+
+    @media (min-width: $desktop-width) {
+        max-width: 1100px;
+    }
 }
 
 .card__title {
     font-weight: 500;
     margin-bottom: 20px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 18px;
+    }
 }
 
 .experience__item:not(:last-child) {

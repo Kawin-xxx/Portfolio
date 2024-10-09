@@ -39,13 +39,28 @@ export default {
     margin: 0 auto;
     padding: 20px;
     padding-bottom: 40px;
+
+    @media (min-width: $tablet-width) {
+        padding: 40px;
+        padding-bottom: 50px;
+    }
 }
 
 .skills__list {
     list-style: none;
+
+    @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
 }
 
 .skills__item:not(:last-child) {
     margin-bottom: 30px;
+
+    @media (min-width: $tablet-width) {
+        margin-bottom: 0;
+    }
 }
 </style>

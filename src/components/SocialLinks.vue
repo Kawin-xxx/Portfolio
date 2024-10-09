@@ -37,6 +37,11 @@ export default {
 .social__item {
     width: 40px;
     height: 40px;
+
+    @media (min-width: $desktop-width) {
+        width: 45px;
+        height: 45px;
+    }
 }
 
 .social__link {
@@ -48,6 +53,15 @@ export default {
     align-items: center;
     border: 1px solid var(--color-accent);
     border-radius: 50%;
+
+    &:hover {
+        background-color: var(--color-accent);
+        box-shadow: 0 0 20px var(--color-accent);
+
+        .social__icon {
+            fill: var(--color-background);
+        }
+    }
 }
 
 .social__icon {

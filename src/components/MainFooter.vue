@@ -32,6 +32,10 @@ export default {
 
 .footer__copyright {
     font-size: 12px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 16px;
+    }
 }
 
 .footer__icon {
