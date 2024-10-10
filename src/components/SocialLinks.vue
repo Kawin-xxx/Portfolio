@@ -62,6 +62,12 @@ export default {
             fill: var(--color-background);
         }
     }
+
+    &:active {
+        background-color: var(--color-accent);
+        box-shadow: 0 0 20px var(--color-accent);
+        opacity: 0.6;
+    }
 }
 
 .social__icon {

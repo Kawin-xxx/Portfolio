@@ -210,6 +210,13 @@ export default {
         box-shadow: 0 0 20px var(--color-accent);
     }
 
+    &:active {
+        box-shadow: 0 0 20px var(--color-accent);
+        background-color: var(--color-accent);
+        color: var(--color-dark-text);
+        opacity: 0.6;
+    }
+
     @media (min-width: $desktop-width) {
         margin: 0 auto 20px;
         font-size: 20px;

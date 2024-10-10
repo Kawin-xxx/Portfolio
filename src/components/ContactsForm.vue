@@ -194,6 +194,11 @@ export default {
         transition: 0.3s ease;
     }
 
+    &:hover,
+    &:focus {
+        background-color: var(--color-dark-text);
+    }
+
     @media (min-width: $desktop-width) {
         width: 100%;
         font-size: 17px;
@@ -233,6 +238,13 @@ export default {
         color: var(--color-dark-text);
         background-color: var(--color-accent);
         box-shadow: 0 0 20px var(--color-accent);
+    }
+
+    &:active {
+        box-shadow: 0 0 20px var(--color-accent);
+        background-color: var(--color-accent);
+        color: var(--color-dark-text);
+        opacity: 0.6;
     }
 }
 

@@ -67,5 +67,12 @@ export default {
         background-color: var(--color-accent);
         box-shadow: 0 0 10px var(--color-accent);
     }
+
+    &:active {
+        box-shadow: 0 0 20px var(--color-accent);
+        background-color: var(--color-accent);
+        color: var(--color-dark-text);
+        opacity: 0.6;
+    }
 }
 </style>
