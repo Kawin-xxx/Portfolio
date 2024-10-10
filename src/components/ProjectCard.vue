@@ -43,6 +43,12 @@ export default {
     border: 1px solid var(--color-accent);
     border-radius: 10px;
     padding: 20px 10px;
+    transition: .2s ease;
+
+    &:hover {
+        box-shadow: 0 0 10px var(--color-accent);
+        transform: scale(1.05);
+    }
 }
 
 .project__title {
