@@ -1,6 +1,10 @@
 <script>
+import ButtonElement from './ButtonElement.vue';
 
 export default {
+    components: {
+        ButtonElement
+    },
     props: {
         cardData: {
             type: { name: String, img: String, gitLink: String, siteLink: String },
@@ -19,8 +23,16 @@ export default {
             </picture>
         </div>
         <div class="project-card__buttons-wrapper">
-            <a :href="cardData.gitLink" class="project-card__button button">Github</a>
-            <a :href="cardData.siteLink" class="project-card__button button">Web-site</a>
+            <button-element
+                class="project-card__button"
+                :buttonLink="cardData.gitLink"
+                buttonText="Github"
+            />
+            <button-element
+                class="project-card__button"
+                :buttonLink="cardData.siteLink"
+                buttonText="Web-site"
+            />
         </div>
     </li>
 </template>
@@ -50,29 +62,5 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-}
-
-.button {
-    display: block;
-    width: fit-content;
-    padding: 5px 10px;
-    color: var(--color-accent);
-    border: 1px solid var(--color-accent);
-    border-radius: 20px;
-    overflow-wrap: break-word;
-    cursor: pointer;
-
-    &:hover {
-        color: var(--color-dark-text);
-        background-color: var(--color-accent);
-        box-shadow: 0 0 10px var(--color-accent);
-    }
-
-    &:active {
-        box-shadow: 0 0 20px var(--color-accent);
-        background-color: var(--color-accent);
-        color: var(--color-dark-text);
-        opacity: 0.6;
-    }
 }
 </style>

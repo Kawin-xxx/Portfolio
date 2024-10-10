@@ -1,9 +1,11 @@
 <script>
 import SocialLinks from './SocialLinks.vue';
+import ButtonElement from './ButtonElement.vue';
 
 export default {
     components: {
-        SocialLinks
+        SocialLinks,
+        ButtonElement
     },
 }
 </script>
@@ -34,7 +36,11 @@ export default {
                     математика и информатика и 3 года коммерческого опыта
                 </p>
 
-                <a href="" class="about__button">Скачать резюме</a>
+                 <button-element
+                    buttonText="Скачать резюме"
+                    buttonLink=""
+                    class="about__button"
+                />
 
                 <SocialLinks class="about__social" />
             </div>
@@ -69,19 +75,6 @@ export default {
         top: 10px;
         left: 10px;
     }
-
-    // &::after {
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    //     border-radius: 50px;
-    //     content: "";
-    //     background-color: var(--color-accent);
-    //     opacity: 20%;
-    //     top: 0;
-    //     left: 0;
-    //     z-index: 3;
-    // }
 }
 
 .about__image {
@@ -194,31 +187,10 @@ export default {
 }
 
 .about__button {
-    display: block;
-    width: fit-content;
-    padding: 5px 10px;
     margin-bottom: 20px;
-    color: var(--color-accent);
-    border: 1px solid var(--color-accent);
-    border-radius: 20px;
-    overflow-wrap: break-word;
-    cursor: pointer;
-
-    &:hover {
-        color: var(--color-dark-text);
-        background-color: var(--color-accent);
-        box-shadow: 0 0 20px var(--color-accent);
-    }
-
-    &:active {
-        box-shadow: 0 0 20px var(--color-accent);
-        background-color: var(--color-accent);
-        color: var(--color-dark-text);
-        opacity: 0.6;
-    }
 
     @media (min-width: $desktop-width) {
-        margin: 0 auto 20px;
+        margin: 0 auto 30px;
         font-size: 20px;
     }
 }
