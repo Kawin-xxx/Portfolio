@@ -15,13 +15,8 @@ export default {
         <div class="about__container container">
             <div class="about__photo-wrapper">
                 <picture>
-                    <!-- <source media="(min-width: 1440px)" srcset="img/slider/flat-desktop.webp 1x, img/slider/flat-desktop@2x.webp 2x">
-                    <source media="(min-width: 768px)" srcset="img/slider/flat-tablet.webp 1x, img/slider/flat-tablet@2x.webp 2x">
-                    <source type="image/webp" srcset="img/slider/flat.webp 1x, img/slider/flat@2x.webp 2x"> -->
-
-                    <source media="(min-width: 1440px)" srcset="../../src/assets/img/photo/photo-desktop.png 1x, ../../src/assets/img/photo/photo-desktop.png 2x">
-                    <source media="(min-width: 768px)" srcset="../../src/assets/img/photo/photo-tablet.png 1x, ../../src/assets/img/photo/photo-tablet.png 2x">
-                    <img class="about__image" src="../../src/assets/img/photo/photo-mobile.png" srcset="../../src/assets/img/photo/photo-mobile@2x.png 2x" alt="Автопортрет.">
+                    <!-- <source type="image/webp" srcset="../../src/assets/img/photo/photo-me.webp 1x, ../../src/assets/img/photo/photo-me@2x.webp 2x"> -->
+                    <img class="about__image" width="250" height="332" src="../../src/assets/img/photo/photo-me.jpg" srcset="../../src/assets/img/photo/photo-me@2x.jpg 2x" alt="Автопортрет.">
                 </picture>
             </div>
 
@@ -64,6 +59,10 @@ export default {
     width: max-content;
     position: relative;
 
+    @media (min-width: $tablet-width) {
+        margin-bottom: 40px;
+    }
+
     &::before {
         position: absolute;
         width: 100%;
@@ -82,14 +81,16 @@ export default {
     border: 2px solid var(--color-border);
     position: relative;
     z-index: 2;
+    width: 250px;
+    height: auto;
 
     @media (min-width: $tablet-width) {
-        width: 200px;
+        width: 300px;
         height: auto;
     }
 
     @media (min-width: $desktop-width) {
-        width: 250px;
+        width: 350px;
         height: auto;
     }
 }
@@ -151,21 +152,21 @@ export default {
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 20ch;
-  }
+    from {
+        width: 0;
+    }
+    to {
+        width: 20ch;
+    }
 }
 
 @keyframes blink {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--color-border);
-  }
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-border);
+    }
 }
 
 .about__text {
