@@ -9,6 +9,7 @@ export default {
             menuItems: MENU_ITEMS,
             activeSection: '',
             isDarkTheme: true,
+            isMobile: window.innerWidth <= 768
         }
     },
     methods: {
@@ -24,7 +25,18 @@ export default {
             document.documentElement.setAttribute('color-theme', newTheme);
             localStorage.setItem('color-theme', newTheme);
         },
+        checkScreenSize() {
+            this.isMobile = window.innerWidth < 768;
+            this.isMenuOpen = this.isMobile ? false : true;
+        }
     },
+    mounted() {
+        window.addEventListener('resize', this.checkScreenSize);
+        this.checkScreenSize();
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.checkScreenSize);
+    }
 }
 </script>
 
@@ -42,35 +54,38 @@ export default {
             <nav class="header__navigation navigation">
                 <button
                     class="navigation__toggle"
-                    :class="{ 'navigation__toggle--open': isMenuOpen, 'navigation__toggle--close': !isMenuOpen }"
+                    :class="{ 'navigation__toggle--open': isMenuOpen }"
                     type="button"
                     @click="toggleMenu"
                     :aria-expanded="isMenuOpen"
                 >
+                    <div class="navigation__toggle-icon"></div>
                     <span class="visually-hidden">
                         {{ isMenuOpen ? 'Закрыть меню' : 'Открыть меню' }}
                     </span>
                 </button>
 
-                <ul class="navigation__list site-list" :class="{ 'site-list--open': isMenuOpen }">
-                    <li
-                        v-for="(item, index) in menuItems"
-                        :key="index"
-                        class="site-list__item"
-                    >
-                        <a
-                            :href="'#'+ item.href"
-                            @click="scrollToSection(item.href)"
-                            class="site-list__link"
-                            :class="{ 'site-list__link--active': activeSection === item.href }"
+                <transition name="fade">
+                    <ul v-if="isMenuOpen" class="navigation__list site-list" :class="{ 'site-list--open': isMenuOpen }">
+                        <li
+                            v-for="(item, index) in menuItems"
+                            :key="index"
+                            class="site-list__item"
                         >
-                            {{ item.name }}
-                        </a>
-                    </li>
-                    <li class="site-list__item checkbox">
-                        <toggle-button @changeTheme="changeTheme"></toggle-button>
-                    </li>
-                </ul>
+                            <a
+                                :href="'#'+ item.href"
+                                @click="scrollToSection(item.href)"
+                                class="site-list__link"
+                                :class="{ 'site-list__link--active': activeSection === item.href }"
+                            >
+                                {{ item.name }}
+                            </a>
+                        </li>
+                        <li class="site-list__item checkbox">
+                            <toggle-button @changeTheme="changeTheme"></toggle-button>
+                        </li>
+                    </ul>
+                </transition>
             </nav>
         </div>
     </header>
@@ -103,7 +118,7 @@ export default {
 }
 
 .navigation {
-    min-height: 60px;
+    height: 60px;
 
     @media (min-width: $tablet-width) {
         height: 100%;
@@ -133,6 +148,10 @@ export default {
         height: 100%;
         min-height: 80px;
     }
+
+    @media (min-width: $desktop-width) {
+        gap: 40px;
+    }
 }
 
 .site-list {
@@ -140,13 +159,9 @@ export default {
     list-style: none;
     background-color: var(--color-background-dark);
 
-    @media (min-width: $tablet-width) {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
     & .site-list__link {
         height: 100%;
+        min-height: 35px;
         display: block;
         border-bottom: 1px solid transparent;
         padding-bottom: 0;
@@ -164,77 +179,99 @@ export default {
 
         @media (min-width: $tablet-width) {
             height: fit-content;
+            min-height: fit-content;
+        }
+
+        @media (min-width: $desktop-width) {
+            font-size: 20px;
         }
     }
 
     &.site-list--open {
         display: block;
+
+        @media (min-width: $tablet-width) {
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
 
     & .site-list__item {
         display: flex;
         align-items: center;
+
+        &:nth-last-child(2) {
+            margin-bottom: 15px;
+
+            @media (min-width: $tablet-width) {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 
 .navigation__toggle {
-  border: none;
-  position: relative;
-  background-color: inherit;
-  width: 60px;
-  min-height: 60px;
-  cursor: pointer;
+    width: 60px;
+    height: 60px;
+    transition-duration: 0.5s;
+    background-color: inherit;
+    border: none;
+    position: relative;
 
     @media (min-width: $tablet-width) {
         display: none;
     }
-}
 
-.navigation__toggle--close {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 24px;
-    right: 22px;
-    height: 1.5px;
-    width: 16px;
-    box-shadow: 0 5px 0 0 var(--color-accent), 0 10px 0 0 var(--color-accent);
-    background-color: var(--color-accent);
-  }
-}
+    .navigation__toggle-icon {
+        transition-duration: 0.5s;
+        position: absolute;
+        height: 3px;
+        width: 30px;
+        top: 30px;
+        left: 15px;
+        background-color: var(--color-accent);
 
-.navigation__toggle--open {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 30px;
-    right: 22px;
-    height: 1.5px;
-    width: 16px;
-    transform: rotate(45deg);
-    background-color: var(--color-accent);
-  }
+        &:before {
+            transition-duration: 0.5s;
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-accent);
+            content: "";
+            top: -10px;
+            left: 0;
+        }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 30px;
-    right: 22px;
-    height: 1.5px;
-    width: 16px;
-    transform: rotate(-45deg);
-    background-color: var(--color-accent);
-  }
-}
+        &:after {
+            transition-duration: 0.5s;
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-accent);
+            content: "";
+            top: 11px;
+            left: 0;
+        }
+    }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
+    &.navigation__toggle--open {
+        .navigation__toggle-icon {
+            transition-duration: 0.5s;
+            background: transparent;
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+            &:before{
+                transform: rotateZ(45deg) scaleX(1.25) translate(4px, 13px);
+            }
+
+            &:after{
+                transform: rotateZ(-45deg) scaleX(1.25) translate(1px, -10px);
+            }
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .logo {
@@ -246,5 +283,26 @@ export default {
     display: flex;
     align-items: center;
     height: 100%;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    @media (min-width: $desktop-width) {
+        & svg {
+            height: 35px;
+            width: auto;
+        }
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>
