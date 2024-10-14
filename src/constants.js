@@ -35,3 +35,14 @@ export const PROJECTS_ITEMS = [
     { name: 'Проект 5', img: 'Фото', gitLink: '#', siteLink: '#' },
     { name: 'Проект 6', img: 'Фото', gitLink: '#', siteLink: '#' }
 ]
+
+export const STACK_ITEMS = [
+    { name: 'Angular', icon: '#icon-angular' },
+    { name: 'Vue', icon: '#icon-vue' },
+    { name: 'Java Script / Type Script', icon: '#icon-js' },
+    { name: 'HTML', icon: '#icon-html', },
+    { name: 'CSS / SCSS', icon: '#icon-css' },
+    { name: 'Figma', icon: '#icon-figma' },
+    { name: 'Node js', icon: '#icon-node-js' },
+    { name: 'Git', icon: '#icon-git' }
+]

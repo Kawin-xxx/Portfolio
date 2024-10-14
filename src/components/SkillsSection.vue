@@ -1,13 +1,16 @@
 <script>
-import { SKILLS_ITEMS } from '@/constants.js'
+import { SKILLS_ITEMS, STACK_ITEMS } from '@/constants.js'
 import SkillsCard from '@/components/SkillsCard.vue'
+import StackItem from '@/components/StackItem.vue';
 export default {
     components: {
-        SkillsCard
+        SkillsCard,
+        StackItem
     },
     data() {
         return {
-            skillItems: SKILLS_ITEMS
+            skillItems: SKILLS_ITEMS,
+            stackItems: STACK_ITEMS
         }
     }
 }
@@ -25,6 +28,18 @@ export default {
                     :cardData="item"
                 />
             </ul>
+
+            <div class="skills__stack stack">
+                <h3 class="stack__title">Стек технологий</h3>
+                <ul class="stack__list">
+                    <StackItem
+                        class="stack__item"
+                        v-for="(item, index) in stackItems"
+                        :key="index"
+                        :stackItem="item"
+                    />
+                </ul>
+            </div>
         </div>
     </section>
 </template>
@@ -48,6 +63,7 @@ export default {
 
 .skills__list {
     list-style: none;
+    margin-bottom: 30px;
 
     @media (min-width: $tablet-width) {
         display: grid;
@@ -60,6 +76,33 @@ export default {
     margin-bottom: 30px;
 
     @media (min-width: $tablet-width) {
+        margin-bottom: 0;
+    }
+}
+
+.stack__title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.stack__list {
+    list-style: none;
+    width: fit-content;
+    margin: 0 auto;
+
+    @media (min-width: $desktop-width) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+.stack__item:not(:last-child) {
+    margin-bottom: 20px;
+
+    @media (min-width: $desktop-width) {
         margin-bottom: 0;
     }
 }
