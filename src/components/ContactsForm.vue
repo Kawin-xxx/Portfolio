@@ -123,7 +123,7 @@ export default {
         <span class="form__message">{{ status }}</span>
 
         <div class="form__buttons-wrapper">
-            <button type="submit" class="form__button">
+            <button type="submit" class="form__button form__button--accent">
                 Отправить
             </button>
 
@@ -196,7 +196,7 @@ export default {
 
     &:hover,
     &:focus {
-        background-color: var(--color-dark-text);
+        background-color: var(--color-background-dark);
     }
 
     @media (min-width: $desktop-width) {
@@ -235,9 +235,7 @@ export default {
     cursor: pointer;
 
     &:hover {
-        color: var(--color-dark-text);
-        background-color: var(--color-accent);
-        box-shadow: 0 0 20px var(--color-accent);
+        box-shadow: 0 0 10px var(--color-accent);
     }
 
     &:active {
@@ -245,6 +243,11 @@ export default {
         background-color: var(--color-accent);
         color: var(--color-dark-text);
         opacity: 0.6;
+    }
+
+    &--accent {
+        background-color: var(--color-accent);
+        color: var(--color-dark-text);
     }
 }
 

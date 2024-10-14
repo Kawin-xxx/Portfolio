@@ -45,8 +45,11 @@ export default {
         <div class="header__container container">
             <div class="header__logo-wrapper logo">
                 <a class="logo__link" href="#">
-                    <svg aria-label="Логотип." width="200px" height="25px">
-                        <use xlink:href="#icon-logo" fill="white"/>
+                    <svg aria-label="Логотип." width="200px" height="25px" v-if="isDarkTheme">
+                        <use xlink:href="#icon-logo-dark" fill="white"/>
+                    </svg>
+                    <svg aria-label="Логотип." width="200px" height="25px" v-if="!isDarkTheme">
+                        <use xlink:href="#icon-logo-light" fill="white"/>
                     </svg>
                 </a>
             </div>
@@ -147,6 +150,7 @@ export default {
         padding: 0;
         height: 100%;
         min-height: 80px;
+        border-left: 0;
     }
 
     @media (min-width: $desktop-width) {
