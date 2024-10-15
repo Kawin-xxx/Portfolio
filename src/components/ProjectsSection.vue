@@ -59,6 +59,7 @@ export default {
     }
 
     @media (min-width: $desktop-width) {
+        gap: 30px;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }

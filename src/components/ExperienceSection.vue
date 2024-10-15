@@ -23,6 +23,7 @@ export default {
                     v-for="(item, index) in experienceItems"
                     :key="index"
                     :cardData="item"
+                    class="experience__item"
                 />
             </ul>
         </div>
@@ -63,6 +64,14 @@ export default {
         left: 0;
         top: 0;
         content: "";
+    }
+}
+
+.experience__item:not(:last-child) {
+    margin-bottom: 30px;
+
+    @media (min-width: $desktop-width) {
+        margin-bottom: 60px;
     }
 }
 </style>

@@ -46,6 +46,10 @@ export default {
     height: 24px;
     border-radius: 50px;
     transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 10px var(--color-accent);
+    }
 }
 
 .checkbox__input:checked ~ .slider {
