@@ -5,11 +5,13 @@
   --color-aqua: #4BDADA;
   --color-aqua-dark: #00E1D1;
   --color-beige: #b4ae9c;
+  --color-grey: #898988;
 }
 
 :root {
   --color-background: var(--color-black);
   --color-background-dark: var(--color-total-black);
+  --color-background-light: var(--color-grey);
   --color-accent: var(--color-aqua);
   --color-accent-dark: var(--color-aqua-dark);
   --color-text: var(--color-white);
@@ -20,6 +22,7 @@
 [color-theme= 'light'] {
   --color-background: #FFF8F3;
   --color-background-dark: #f3e5dc;
+  --color-background-light: var(--color-background);
   --color-accent: #b3757c;
   --color-accent-dark: #e4d5db;
   --color-text: #111111;
