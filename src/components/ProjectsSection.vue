@@ -8,7 +8,24 @@ export default {
     },
     data() {
         return {
-            projectsItems: PROJECTS_ITEMS
+            projectsItems: PROJECTS_ITEMS,
+            currentCategory: 'All'
+        }
+    },
+    computed: {
+        currentProjects() {
+            const filters = {
+                All: () => this.projectsItems,
+                Sites: () => this.projectsItems.filter(item => item.isSite),
+                Design: () => this.projectsItems.filter(item => item.isDesign),
+            };
+
+            return (filters[this.currentCategory] || filters['All'])();
+        }
+    },
+    methods: {
+        changeCategory(category) {
+            this.currentCategory = category;
         }
     }
 }
@@ -18,10 +35,34 @@ export default {
     <section class="main-container__projects section projects" id="projects">
         <div class="projects__container container">
             <h2 class="projects__title">Мои проекты</h2>
+            <div class="projects__buttons-wrapper">
+                <button
+                    class="projects__button"
+                    :class="{ 'projects__button--active': currentCategory==='Sites' }"
+                    @click="changeCategory('Sites')"
+                >
+                    Сайты
+                </button>
+
+                <button
+                    class="projects__button"
+                    :class="{ 'projects__button--active': currentCategory==='Design' }"
+                    @click="changeCategory('Design')"
+                >
+                    Дизайн
+                </button>
+                <button
+                    class="projects__button"
+                    :class="{ 'projects__button--active': currentCategory==='All' }"
+                    @click="changeCategory('All')"
+                >
+                    Все
+                </button>
+            </div>
             <ul class="projects__list">
                 <ProjectCard
                     class="projects__item"
-                    v-for="(item, index) in projectsItems"
+                    v-for="(item, index) in currentProjects"
                     :key="index"
                     :cardData="item"
                 />
@@ -47,6 +88,33 @@ export default {
 .projects__title {
     text-align: center;
     margin-bottom: 20px;
+}
+
+.projects__buttons-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @media (min-width: $tablet-width) {
+        gap: 30px;
+    }
+}
+
+.projects__button {
+    background-color: var(--color-background-light);
+    padding: 10px 15px;
+    border-radius: 40px;
+    border: none;
+    font-size: 17px;
+    color: var(--color-dark-text);
+    cursor: pointer;
+    vertical-align: middle;
+
+    &--active {
+        background-color: var(--color-accent);
+    }
 }
 
 .projects__list {
