@@ -44,9 +44,11 @@ export const PROJECTS_ITEMS = [
 export const STACK_ITEMS = [
     { name: 'Angular', icon: '#icon-angular' },
     { name: 'Vue', icon: '#icon-vue' },
-    { name: 'Java Script / Type Script', icon: '#icon-js' },
+    { name: 'JS / TS', icon: '#icon-js' },
     { name: 'HTML', icon: '#icon-html', },
-    { name: 'CSS / SCSS', icon: '#icon-css' },
+    { name: 'CSS', icon: '#icon-css' },
+    { name: 'Less', icon: '#icon-less' },
+    { name: 'Sass', icon: '#icon-sass' },
     { name: 'Figma', icon: '#icon-figma' },
     { name: 'Node js', icon: '#icon-node-js' },
     { name: 'Git', icon: '#icon-git' }
