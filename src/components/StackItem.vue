@@ -23,10 +23,16 @@ export default {
     display: flex;
     align-items: center;
     gap: 20px;
+    font-size: 20px;
 
     @media (min-width: $desktop-width) {
         display: flex;
         gap: 5px;
+
+        & svg {
+            width: 40px;
+            height: auto;
+        }
     }
 }
 </style>

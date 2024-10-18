@@ -83,7 +83,7 @@ export default {
 .stack__title {
     margin-bottom: 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
 }
 
@@ -92,17 +92,22 @@ export default {
     width: fit-content;
     margin: 0 auto;
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $tablet-width) {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 30px;
+    }
+
+    @media (min-width: $desktop-width) {
+        gap: 40px;
     }
 }
 
 .stack__item:not(:last-child) {
     margin-bottom: 20px;
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $tablet-width) {
         margin-bottom: 0;
     }
 }
