@@ -28,12 +28,17 @@ export const SKILLS_ITEMS = [
 ]
 
 export const PROJECTS_ITEMS = [
-    { name: 'Проект 1', img: 'Фото', gitLink: '#', siteLink: '#' },
-    { name: 'Проект 2', img: 'Фото', gitLink: '#', siteLink: '#' },
-    { name: 'Проект 3', img: 'Фото', gitLink: '#', siteLink: '#' },
-    { name: 'Проект 4', img: 'Фото', gitLink: '#', siteLink: '#' },
-    { name: 'Проект 5', img: 'Фото', gitLink: '#', siteLink: '#' },
-    { name: 'Проект 6', img: 'Фото', gitLink: '#', siteLink: '#' }
+    { name: 'Drink2go', img: 'drink2go.png', gitLink: 'https://github.com/Kawin-xxx/Drink2Go', siteLink: 'https://kawin-xxx.github.io/Drink2Go/' },
+    { name: 'Glacy Shop', img: 'glacy-shop.png', gitLink: 'https://github.com/Kawin-xxx/2111545-gllacy-34', siteLink: 'https://kawin-xxx.github.io/2111545-gllacy-34/' },
+    { name: 'Antarctic Cruises', img: 'antarctic.png', gitLink: 'https://github.com/Kawin-xxx/Antarctic-cruises', siteLink: 'https://kawin-xxx.github.io/Antarctic-cruises/' },
+    { name: 'Smart Device', img: 'smart-devices.png', gitLink: 'https://github.com/Kawin-xxx/Smart-Device', siteLink: 'https://kawin-xxx.github.io/Smart-Device/' },
+    { name: 'Super Gym', img: 'super-gym.png', gitLink: 'https://github.com/Kawin-xxx/Fitness', siteLink: 'https://kawin-xxx.github.io/Fitness/' },
+    { name: 'Portfolio', img: 'portfolio.png', gitLink: 'https://github.com/Kawin-xxx/Portfolio', siteLink: 'https://kawin-xxx.github.io/Portfolio/' },
+    { name: 'Keksogram', img: 'keksogram.jpg', gitLink: 'https://github.com/Kawin-xxx/2111545-kekstagram-simple-27', siteLink: 'https://kawin-xxx.github.io/2111545-kekstagram-simple-27/' },
+    { name: 'Cat Energy', img: 'cat-energy.png', gitLink: 'https://github.com/Kawin-xxx/2111545-cat-energy-26', siteLink: 'https://kawin-xxx.github.io/2111545-cat-energy-26/' },
+    { name: 'NFT Market (Design)', img: 'nft-market.png', gitLink: '', siteLink: '' },
+    { name: 'Oils (Design)', img: 'oils.png', gitLink: '', siteLink: '' },
+    { name: 'Donuts (Design)', img: 'donuts.png', gitLink: '', siteLink: '' }
 ]
 
 export const STACK_ITEMS = [

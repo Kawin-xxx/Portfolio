@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template>
-    <a :href="buttonLink" class="button">{{ buttonText }}</a>
+    <a :href="buttonLink" target="_blank" class="button">{{ buttonText }}</a>
 </template>
 
 <style scoped lang="scss">

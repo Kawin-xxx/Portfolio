@@ -9,7 +9,7 @@ export default {
         cardData: {
             type: { name: String, img: String, gitLink: String, siteLink: String },
             required: true
-        }
+        },
     }
 }
 </script>
@@ -19,10 +19,10 @@ export default {
         <h3 class="project__title">{{ cardData.name }}</h3>
         <div class="project__photo-wrapper">
             <picture>
-                <img class="project__image" src="../../src/assets/img/projects/image1.png" :alt=cardData.name>
+                <img class="project__image" :src="`/Portfolio/img/projects/${cardData.img}`" :alt=cardData.name>
             </picture>
         </div>
-        <div class="project-card__buttons-wrapper">
+        <div class="project-card__buttons-wrapper" v-if="cardData.gitLink">
             <button-element
                 class="project-card__button"
                 :buttonLink="cardData.gitLink"
