@@ -229,7 +229,7 @@ export default {
     .navigation__toggle-icon {
         transition-duration: 0.5s;
         position: absolute;
-        height: 3px;
+        height: 2px;
         width: 30px;
         top: 30px;
         left: 15px;
