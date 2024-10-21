@@ -15,8 +15,8 @@ export default {
         <div class="about__container container">
             <div class="about__photo-wrapper">
                 <picture>
-                    <!-- <source type="image/webp" srcset="../../src/assets/img/photo/photo-me.webp 1x, ../../src/assets/img/photo/photo-me@2x.webp 2x"> -->
-                    <img class="about__image" width="250" height="332" src="../../src/assets/img/photo/photo-me.jpg" srcset="../../src/assets/img/photo/photo-me@2x.jpg 2x" alt="Автопортрет.">
+                    <source type="image/webp" srcset="/img/photo/photo-me.webp 1x, /img/photo/photo-me@2x.webp 2x">
+                    <img class="about__image" width="250" height="332" src="/img/photo/photo-me.jpg" srcset="/img/photo/photo-me@2x.jpg 2x" alt="Автопортрет.">
                 </picture>
             </div>
 

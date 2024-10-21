@@ -19,7 +19,15 @@ export default {
         <h3 class="project__title">{{ cardData.name }}</h3>
         <div class="project__photo-wrapper">
             <picture>
-                <img class="project__image" :src="`/Portfolio/img/projects/${cardData.img}`" :alt=cardData.name>
+                <source type="image/webp" :srcset="`/Portfolio/img/projects/${cardData.img}.webp`">
+                <img
+                    class="project__image"
+                    width="250"
+                    height="133"
+                    loading="lazy"
+                    :src="`/Portfolio/img/projects/${cardData.img}.png`"
+                    :alt="`Изображение проекта ${cardData.name}.`"
+                >
             </picture>
         </div>
         <div class="project-card__buttons-wrapper" v-if="cardData.gitLink">
@@ -61,6 +69,7 @@ export default {
     border-radius: 5px;
     margin-bottom: 20px;
     width: 100%;
+    height: auto;
 }
 
 .project-card__buttons-wrapper {
