@@ -28,6 +28,9 @@ export default {
         checkScreenSize() {
             this.isMobile = window.innerWidth < 768;
             this.isMenuOpen = this.isMobile ? false : true;
+        },
+        changeLanguage(lang) {
+            this.$i18n.locale = lang;
         }
     },
     mounted() {
@@ -45,10 +48,10 @@ export default {
         <div class="header__container container">
             <div class="header__logo-wrapper logo">
                 <a class="logo__link" href="#">
-                    <svg aria-label="Логотип." width="200px" height="25px" v-if="isDarkTheme">
+                    <svg :aria-label="$t('header.logoText')" width="200px" height="25px" v-if="isDarkTheme">
                         <use xlink:href="#icon-logo-dark" fill="white"/>
                     </svg>
-                    <svg aria-label="Логотип." width="200px" height="25px" v-if="!isDarkTheme">
+                    <svg :aria-label="$t('header.logoText')" width="200px" height="25px" v-if="!isDarkTheme">
                         <use xlink:href="#icon-logo-light" fill="white"/>
                     </svg>
                 </a>
@@ -64,7 +67,7 @@ export default {
                 >
                     <div class="navigation__toggle-icon"></div>
                     <span class="visually-hidden">
-                        {{ isMenuOpen ? 'Закрыть меню' : 'Открыть меню' }}
+                        {{ isMenuOpen ? $t('header.closeMenu') : $t('header.openMenu') }}
                     </span>
                 </button>
 
@@ -76,16 +79,29 @@ export default {
                             class="site-list__item"
                         >
                             <a
-                                :href="'#'+ item.href"
-                                @click="scrollToSection(item.href)"
+                                :href="'#'+ item"
+                                @click="scrollToSection(item)"
                                 class="site-list__link"
-                                :class="{ 'site-list__link--active': activeSection === item.href }"
+                                :class="{ 'site-list__link--active': activeSection === item }"
                             >
-                                {{ item.name }}
+                                {{ $t(`header.navList.${item}`) }}
                             </a>
                         </li>
                         <li class="site-list__item checkbox">
                             <toggle-button @changeTheme="changeTheme"></toggle-button>
+                        </li>
+                        <li class="site-list__item">
+                            <div class="navigation__lang-buttons">
+                                <button @click="changeLanguage('en')" class="lang-button">
+                                    <span class="lang-button__text">EN</span>
+                                    <img width="25" height="25" src="/img/languages/usa.png">
+                                </button>
+
+                                <button @click="changeLanguage('ru')" class="lang-button">
+                                    <span class="lang-button__text">RU</span>
+                                    <img width="25" height="25" src="/img/languages/russia.png">
+                                </button>
+                            </div>
                         </li>
                     </ul>
                 </transition>
@@ -122,10 +138,14 @@ export default {
 
 .navigation {
     height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
     @media (min-width: $tablet-width) {
         height: 100%;
         min-height: 80px;
+        gap: 40px;
     }
 }
 
@@ -308,5 +328,22 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
+}
+
+.navigation__lang-buttons {
+    display: flex;
+    gap: 5px;
+
+    button {
+        border: none;
+        background-color: inherit;
+        color: var(--color-text);
+        cursor: pointer;
+    }
+}
+
+.lang-button__text {
+    vertical-align: top;
+    font-size: 9px;
 }
 </style>

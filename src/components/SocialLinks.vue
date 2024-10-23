@@ -20,7 +20,6 @@ export default {
                 <svg :aria-label="item.name" width="24px" height="24px" class="social__icon">
                     <use :xlink:href="item.icon"/>
                 </svg>
-                <span class="visually-hidden">Ссылка на социальную сеть вконтакте.</span>
             </a>
         </li>
     </ul>

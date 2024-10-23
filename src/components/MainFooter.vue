@@ -8,10 +8,10 @@ export default {
     <footer class="footer">
         <div class="footer__container container">
             <p class="footer__copyright">
-                <svg aria-label="Значок копирайта" width="20px" height="20px" class="footer__icon">
+                <svg :aria-label="$t('footer.svgDescription')" width="20px" height="20px" class="footer__icon">
                     <use xlink:href="#icon-copyright" fill="white"/>
                 </svg>
-                <span class="footer__text">Разработано Екатериной Олейниковой в 2024 году</span>
+                <span class="footer__text">{{ $t('footer.text') }}</span>
             </p>
         </div>
     </footer>

@@ -11,7 +11,7 @@ export default {
 
 <template>
     <li class="stack-item">
-        <svg aria-label="Логотип." width="25px" height="25px">
+        <svg :aria-label="$t('skills.stackIconText') + stackItem.name" width="25px" height="25px">
             <use :xlink:href="stackItem.icon"/>
         </svg>
         <span>{{ stackItem.name }}</span>

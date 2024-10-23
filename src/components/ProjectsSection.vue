@@ -34,14 +34,14 @@ export default {
 <template>
     <section class="main-container__projects section projects" id="projects">
         <div class="projects__container container">
-            <h2 class="projects__title">Мои проекты</h2>
+            <h2 class="projects__title">{{ $t('projects.title') }}</h2>
             <div class="projects__buttons-wrapper">
                 <button
                     class="projects__button"
                     :class="{ 'projects__button--active': currentCategory==='Sites' }"
                     @click="changeCategory('Sites')"
                 >
-                    Сайты
+                    {{ $t('projects.categories.sites') }}
                 </button>
 
                 <button
@@ -49,14 +49,14 @@ export default {
                     :class="{ 'projects__button--active': currentCategory==='Design' }"
                     @click="changeCategory('Design')"
                 >
-                    Дизайн
+                    {{ $t('projects.categories.design') }}
                 </button>
                 <button
                     class="projects__button"
                     :class="{ 'projects__button--active': currentCategory==='All' }"
                     @click="changeCategory('All')"
                 >
-                    Все
+                    {{ $t('projects.categories.all') }}
                 </button>
             </div>
             <ul class="projects__list">
