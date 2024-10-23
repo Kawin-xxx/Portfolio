@@ -17,7 +17,7 @@ export default {
 <template>
     <section class="main-container__experience section experience" id="experience">
         <div class="experience__container container">
-            <h2 class="experience__title">Мой опыт</h2>
+            <h2 class="experience__title">{{ $t('experience.title') }}</h2>
             <ul class="experience__list">
                 <ExperienceCard
                     v-for="(item, index) in experienceItems"
@@ -52,7 +52,6 @@ export default {
 .experience__list {
     list-style: none;
     padding-left: 20px;
-    padding-top: 5px;
     position: relative;
 
     &::before {

@@ -19,7 +19,7 @@ export default {
 <template>
     <section class=" main-container__skills skills section" id="skills">
         <div class="skills__container container">
-            <h2 class="skills__title">Мои навыки</h2>
+            <h2 class="skills__title">{{ $t('skills.title') }}</h2>
             <ul class="skills__list">
                 <SkillsCard
                     class="skills__item"
@@ -30,7 +30,7 @@ export default {
             </ul>
 
             <div class="skills__stack stack">
-                <h3 class="stack__title">Стек технологий</h3>
+                <h3 class="stack__title">{{ $t('skills.technologiesTitle') }}</h3>
                 <ul class="stack__list">
                     <StackItem
                         class="stack__item"

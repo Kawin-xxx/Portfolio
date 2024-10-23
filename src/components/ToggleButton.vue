@@ -12,7 +12,12 @@ export default {
 <template>
 <div class="checkbox__switch">
     <label class="checkbox__label">
-        <input type="checkbox" name="theme" class="checkbox__input" @click="this.$emit('changeTheme')">
+        <input
+            type="checkbox"
+            name="theme"
+            class="checkbox__input"
+            @click="this.$emit('changeTheme')"
+        >
         <span class='slider'></span>
     </label>
 </div>

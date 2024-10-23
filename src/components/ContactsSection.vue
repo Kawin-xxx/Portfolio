@@ -13,10 +13,10 @@ export default {
 <template>
     <section class="main-container__contacts section contacts" id="contacts">
         <div class="contacts__container container">
-            <h2 class="contacts__title">Контакты</h2>
+            <h2 class="contacts__title">{{ $t('contacts.title') }}</h2>
             <div class="contacts__wrapper">
                 <div class="contacts__social-wrapper">
-                    <p class="contsacts__description">Свяжитесь со мной!</p>
+                    <p class="contsacts__description">{{ $t('contacts.socialText') }}</p>
                     <SocialLinks class="contacts__social" />
                 </div>
 

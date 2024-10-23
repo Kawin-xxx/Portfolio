@@ -66,7 +66,7 @@ export default {
         class="form"
         @submit.prevent="handleSubmit"
     >
-        <p class="form__description">Оставьте мне сообщение</p>
+        <p class="form__description">{{ $t('contacts.formText') }}</p>
         <div class="form__inputs-wrapper">
             <label for="name" class="form__label">
                 <input
@@ -74,11 +74,11 @@ export default {
                     id="name"
                     name="name"
                     type="text"
-                    placeholder="Имя"
+                    :placeholder="$t('contacts.formFields.name')"
                     required
                     class="form__input"
                 >
-                <span class="form__placeholder">Имя</span>
+                <span class="form__placeholder">{{ $t('contacts.formFields.name') }}</span>
             </label>
 
             <label for="email" class="form__label">
@@ -86,12 +86,12 @@ export default {
                     v-model="email"
                     id="email"
                     name="email"
-                    type="text"
-                    placeholder="Email"
+                    type="email"
+                    :placeholder="$t('contacts.formFields.email')"
                     required
                     class="form__input"
                 >
-                <span class="form__placeholder">Email</span>
+                <span class="form__placeholder">{{ $t('contacts.formFields.email') }}</span>
             </label>
 
             <label for="phone" class="form__label">
@@ -100,11 +100,11 @@ export default {
                     id="phone"
                     name="phone"
                     type="number"
-                    placeholder="Номер телефона"
+                    :placeholder="$t('contacts.formFields.phone')"
                     required
                     class="form__input"
                 >
-                <span class="form__placeholder">Телефон</span>
+                <span class="form__placeholder">{{ $t('contacts.formFields.phone') }}</span>
             </label>
 
             <label for="message" class="form__label">
@@ -113,22 +113,22 @@ export default {
                     id="message"
                     name="message"
                     type="text"
-                    placeholder="Сообщение"
+                    :placeholder="$t('contacts.formFields.message')"
                     required
                     class="form__textarea"
                 ></textarea>
-                <span class="form__placeholder">Сообщение</span>
+                <span class="form__placeholder">{{ $t('contacts.formFields.message') }}</span>
             </label>
         </div>
         <span class="form__message">{{ status }}</span>
 
         <div class="form__buttons-wrapper">
             <button type="submit" class="form__button form__button--accent">
-                Отправить
+                {{ $t('contacts.buttonSend') }}
             </button>
 
             <button type="reset" class="form__button">
-                Очистить
+                {{ $t('contacts.buttonClear') }}
             </button>
         </div>
     </form>

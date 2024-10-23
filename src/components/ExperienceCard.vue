@@ -2,7 +2,7 @@
 export default {
     props: {
         cardData: {
-            type: { name: String, description: String, yearStart: Number, yearEnd: Number },
+            type: String,
             required: true
         }
     }
@@ -11,10 +11,14 @@ export default {
 
 <template>
     <li class="card">
-        <span class="card__year">{{ cardData.yearStart }}</span>
+        <span class="card__year">
+            {{ $t(`experience.experienceList.${cardData}.yearStart`) }} -
+            {{ $t(`experience.experienceList.${cardData}.yearEnd`) }}
+        </span>
+
         <div class="card__button">
-            <h3 class="card__title">{{ cardData.name }}</h3>
-            <p class="card__description">{{ cardData.description }}</p>
+            <h3 class="card__title">{{ $t(`experience.experienceList.${cardData}.title`) }}</h3>
+            <p class="card__description">{{ $t(`experience.experienceList.${cardData}.description`) }}</p>
         </div>
     </li>
 </template>
@@ -73,9 +77,11 @@ export default {
 .card__title {
     font-weight: 500;
     margin-bottom: 20px;
+    color: var(--color-accent-text);
 
     @media (min-width: $desktop-width) {
         font-size: 18px;
+        margin-bottom: 30px;
     }
 }
 </style>
