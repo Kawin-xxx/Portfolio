@@ -26,7 +26,7 @@ export default {
                     height="133"
                     loading="lazy"
                     :src="`/Portfolio/img/projects/${cardData.img}.png`"
-                    :alt="`Изображение проекта ${cardData.name}.`"
+                    :alt="`${$t('projects.imageText')} ${cardData.name}.`"
                 >
             </picture>
         </div>

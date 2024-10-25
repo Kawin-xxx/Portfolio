@@ -2,7 +2,7 @@
 export default {
     props: {
         cardData: {
-            type: { name: String, description: String },
+            type: String,
             required: true
         }
     }
@@ -11,8 +11,8 @@ export default {
 
 <template>
     <li class="skills-card">
-        <h3 class="skills-card__title">{{ cardData.name }}</h3>
-        <p class="skills-card__description">{{ cardData.description }}</p>
+        <h3 class="skills-card__title">{{ $t(`skills.skillsList.${cardData}.title`) }}</h3>
+        <p class="skills-card__description">{{ $t(`skills.skillsList.${cardData}.description`) }}</p>
     </li>
 </template>
 

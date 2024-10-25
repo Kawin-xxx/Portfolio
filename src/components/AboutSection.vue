@@ -6,7 +6,7 @@ export default {
     components: {
         SocialLinks,
         ButtonElement
-    },
+    }
 }
 </script>
 
@@ -16,23 +16,34 @@ export default {
             <div class="about__photo-wrapper">
                 <picture>
                     <source type="image/webp" srcset="/img/photo/photo-me.webp 1x, /img/photo/photo-me@2x.webp 2x">
-                    <img class="about__image" width="250" height="332" src="/img/photo/photo-me.jpg" srcset="/img/photo/photo-me@2x.jpg 2x" alt="Автопортрет.">
+                    <img
+                        class="about__image"
+                        width="250"
+                        height="332"
+                        src="/img/photo/photo-me.jpg"
+                        srcset="/img/photo/photo-me@2x.jpg 2x"
+                        :alt="$t('about.imageText')"
+                    >
                 </picture>
             </div>
 
             <div class="about__description-wrapper">
-                <h1 class="about__title about__title--mobile">Привет, меня зовут <span class="about__accent">Катя</span></h1>
-                <h1 class="about__title about__title--desktop">Привет, меня зовут <span class="about__accent">Екатерина Олейникова</span></h1>
+                <h1 class="about__title about__title--mobile">
+                    {{ $t('about.title') }} <span class="about__accent">{{ $t('about.name') }}</span>
+                </h1>
+                <h1 class="about__title about__title--desktop">
+                    {{ $t('about.title') }} <span class="about__accent">{{ $t('about.nameFull') }}</span>
+                </h1>
 
-                <p class="about__text">Я <span class="about__accent about__typing-text">фронтенд разработчик</span></p>
-                <p class="about__description">
-                    Люблю фронтенд и все, что с ним связано!
-                    Имею диплом бакалавра по направлению прикладная
-                    математика и информатика и 3 года коммерческого опыта
+                <p class="about__text">
+                    {{ $t('about.profession.span') }}
+                    <span class="about__accent about__typing-text">{{ $t('about.profession.name') }}</span>
                 </p>
 
-                 <button-element
-                    buttonText="Скачать резюме"
+                <p class="about__description">{{ $t('about.description') }}</p>
+
+                <button-element
+                    :buttonText="$t('about.button')"
                     buttonLink=""
                     class="about__button"
                 />
@@ -134,21 +145,8 @@ export default {
     overflow: hidden;
     white-space: nowrap;
     border-right: 3px solid;
-    font-family: monospace;
     vertical-align: bottom;
-    animation: typing 4s steps(20, end), blink 0.75s step-end infinite alternate;
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-    
-@keyframes blink {
-    50% {
-        border-color: transparent
-    }
+    animation: typing 4s steps(30, end), blink 0.75s step-end infinite alternate;
 }
 
 @keyframes typing {
@@ -156,7 +154,7 @@ export default {
         width: 0;
     }
     to {
-        width: 20ch;
+        width: 16ch;
     }
 }
 

@@ -13,7 +13,8 @@
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-i18n": "^10.0.4"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
