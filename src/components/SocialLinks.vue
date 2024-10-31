@@ -16,7 +16,7 @@ export default {
             :key="index"
             class="social__item"
         >
-            <a :href="item.link" class="social__link">
+            <a :href="item.link" class="social__link" target="_blank">
                 <svg :aria-label="item.name" width="24px" height="24px" class="social__icon">
                     <use :xlink:href="item.icon"/>
                 </svg>

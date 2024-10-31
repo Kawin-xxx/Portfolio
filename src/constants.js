@@ -7,10 +7,10 @@ export const MENU_ITEMS = [
 ]
 
 export const SOCIAL_LINKS = [
-    { name: 'git',        link: '', icon: '#icon-github'},
-    { name: 'telegram',   link: '', icon: '#icon-telegram'},
-    { name: 'instagram',  link: '', icon: '#icon-instagram'},
-    { name: 'vk',         link: '', icon: '#icon-vk'}
+    { name: 'github',     link: 'https://github.com/Kawin-xxx',          icon: '#icon-github'},
+    { name: 'telegram',   link: 'https://t.me/Gryter',                   icon: '#icon-telegram'},
+    { name: 'instagram',  link: 'https://www.instagram.com/kawin_x_x_x', icon: '#icon-instagram'},
+    { name: 'vk',         link: 'https://vk.com/xxxmafiaa',              icon: '#icon-vk'}
 ]
 
 export const EXPERIENS_ITEMS = [
