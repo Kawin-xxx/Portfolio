@@ -41,7 +41,7 @@ export default {
                 <p class="about__description">{{ $t('about.description') }}</p>
 
                 <a
-                    href="/Portfolio/public/pdf/CV_Oleinikova-Ekaterina.pdf"
+                    href="/Portfolio/pdf/CV_Oleinikova-Ekaterina.pdf"
                     class="about__button"
                     target="_blank"
                 >
