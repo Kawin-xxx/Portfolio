@@ -1,11 +1,9 @@
 <script>
 import SocialLinks from './SocialLinks.vue';
-import ButtonElement from './ButtonElement.vue';
 
 export default {
     components: {
-        SocialLinks,
-        ButtonElement
+        SocialLinks
     }
 }
 </script>
@@ -42,11 +40,13 @@ export default {
 
                 <p class="about__description">{{ $t('about.description') }}</p>
 
-                <button-element
-                    :buttonText="$t('about.button')"
-                    buttonLink=""
+                <a
+                    href="/Portfolio/public/pdf/CV_Oleinikova-Ekaterina.pdf"
                     class="about__button"
-                />
+                    target="_blank"
+                >
+                    {{ $t('about.button') }}
+                </a>
 
                 <SocialLinks class="about__social" />
             </div>
@@ -185,18 +185,39 @@ export default {
     }
 }
 
+.about__social {
+    @media (min-width: $desktop-width) {
+        justify-content: center;
+    }
+}
+
 .about__button {
+    display: block;
+    width: fit-content;
+    padding: 5px 10px;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 20px;
+    overflow-wrap: break-word;
+    cursor: pointer;
     margin-bottom: 20px;
 
     @media (min-width: $desktop-width) {
         margin: 0 auto 30px;
         font-size: 20px;
     }
-}
 
-.about__social {
-    @media (min-width: $desktop-width) {
-        justify-content: center;
+    &:hover {
+        color: var(--color-dark-text);
+        background-color: var(--color-accent);
+        box-shadow: 0 0 20px var(--color-accent);
+    }
+
+    &:active {
+        box-shadow: 0 0 20px var(--color-accent);
+        background-color: var(--color-accent);
+        color: var(--color-dark-text);
+        opacity: 0.6;
     }
 }
 </style>
